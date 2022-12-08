@@ -100,7 +100,6 @@ export default {
       this.raiders.forEach((raider) => {
         const url = `${this.raiderioUrl}&realm=${this.server}&name=${raider}&fields=${this.raiderioFields}`;
         this.$http.get(url).then((result) => {
-          console.log(result.data);
           this.data.push({
             name: raider,
             ilvl: result.data.gear.item_level_equipped,
