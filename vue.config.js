@@ -3,3 +3,7 @@
 // module.exports = defineConfig({
 //   transpileDependencies: ["vuetify"],
 // });
+
+module.exports = {
+  publicPath: "/raid-roster/",
+};
