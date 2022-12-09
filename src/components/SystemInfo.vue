@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div clas="row">
-      <h1>The Church</h1>
+      <a href="https://www.thechurchguild.info/"><h1>The Church</h1></a>
       <p>
         Number of Raiders: {{ data.length }}
         <br />
