@@ -1,6 +1,15 @@
-# Monitoring Web
+# raid-roster
 
-Frontend component to the monitoring api project
+## Dev Notes
 
+- clone repository
+- change `raiders` variabel in `src\components\SystemInfo.vue`
+- change `server` to wow server in `src\components\SystemInfo.vue`
+  
+In order to run the app
+ - `npm install`
+ - `npm run serve`
+ - navigate to `[loc](http://localhost:8080/raid-roster/)`
 
-![image](https://user-images.githubusercontent.com/1637696/172243924-5ecdb5af-5664-4688-b82d-64cbfd07ea1c.png)
+Deploy your app to github pages
+- `npm run deploy`

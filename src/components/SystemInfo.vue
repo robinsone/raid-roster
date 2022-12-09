@@ -26,8 +26,13 @@
           :search="search"
           disable-pagination
           hide-default-footer
+          :sort-by.sync="sortBy"
+          :sort-desc.sync="sortDesc"
         >
-          <template v-slot:item.ilvl="{ item }">
+          <template v-slot:[`item.name`]="{ item }">
+            <b class="text-uppercase">{{ item.name }}</b>
+          </template>
+          <template v-slot:[`item.ilvl`]="{ item }">
             <v-chip :color="getColor(item.ilvl)" dark>
               {{ item.ilvl }}
             </v-chip>
@@ -45,10 +50,14 @@ export default {
   data: () => ({
     headers: [
       { text: "Raider", value: "name", align: "start" },
-      { text: "Active Spec", value: "role", align: "end" },
+      { text: "Class", value: "class", align: "end" },
+      { text: "Spec", value: "spec", align: "end" },
+      { text: "Role", value: "role", align: "end" },
       { text: "ilvl", value: "ilvl", align: "center" },
       { text: "Latest M+", value: "mplus" },
     ],
+    sortBy: "ilvl",
+    sortDesc: true,
     data: [],
     stats: [],
     search: "",
@@ -105,13 +114,17 @@ export default {
             ilvl: result.data.gear.item_level_equipped,
             mplus: result.data.mythic_plus_weekly_highest_level_runs,
             role: result.data.active_spec_role,
+            class: result.data.class,
+            spec: result.data.active_spec_name,
           });
         });
       });
     },
     getColor(ilvl) {
-      if (ilvl > 360) return "green";
-      else if (ilvl > 340) return "orange";
+      if (ilvl > 375) return "orange";
+      else if (ilvl > 370) return "purple";
+      else if (ilvl > 360) return "blue";
+      else if (ilvl > 340) return "grey";
       else return "red";
     },
   },
