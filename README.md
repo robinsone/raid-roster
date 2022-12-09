@@ -3,7 +3,7 @@
 ## Dev Notes
 
 - clone repository
-- change `raiders` variabel in `src\components\SystemInfo.vue`
+- change `raiders` variable in `src\components\SystemInfo.vue`
 - change `server` to wow server in `src\components\SystemInfo.vue`
   
 In order to run the app
