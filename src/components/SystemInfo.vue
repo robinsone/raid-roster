@@ -2,11 +2,11 @@
   <div class="container">
     <div clas="row">
       <a href="https://www.thechurchguild.info/"><h1>The Church</h1></a>
-      <p>
-        Number of Raiders: {{ data.length }}
-        <br />
-        Average ilvl: {{ averageIlvl }}
-      </p>
+      Number of Raiders: {{ data.length }} | Average ilvl: {{ averageIlvl }}
+      <br />
+      Tank: {{ tankCount }} | Healers: {{ healerCount }} | DPS: {{ rangedCount + meleeCount }}
+      <br />
+      Melee DPS: {{ meleeCount }} | Ranged DPS: {{ rangedCount }}
       <p></p>
     </div>
     <div class="row">
@@ -26,6 +26,7 @@
           :search="search"
           disable-pagination
           hide-default-footer
+          multi-sort
           :sort-by.sync="sortBy"
           :sort-desc.sync="sortDesc"
         >
@@ -47,17 +48,24 @@
 export default {
   name: "HelloWorld",
 
-  data: () => ({
+  data: (vm) => ({
     headers: [
       { text: "Raider", value: "name", align: "start" },
       { text: "Class", value: "class", align: "end" },
       { text: "Spec", value: "spec", align: "end" },
-      { text: "Role", value: "role", align: "end" },
+      {
+        text: "Role",
+        value: "role",
+        align: "end",
+        sort: (a, b) => {
+          return vm.sort(a, b);
+        },
+      },
       { text: "ilvl", value: "ilvl", align: "center" },
       { text: "Latest M+", value: "mplus" },
     ],
-    sortBy: "ilvl",
-    sortDesc: true,
+    sortBy: ["role", "ilvl"],
+    sortDesc: [true, true],
     data: [],
     stats: [],
     search: "",
@@ -65,33 +73,33 @@ export default {
     raiderioFields: "mythic_plus_weekly_highest_level_runs%2Cgear",
     server: "illidan",
     raiders: [
-      "Endersz",
-      "Haveutried",
-      "Quadraxes",
-      "Rejudge",
-      "Noçtis",
-      "Vodin",
-      "Immaevoker",
-      "Devô",
-      "Zerosrog",
-      "Argentzelda",
-      "Youfus",
-      "Fischa",
-      "Sigard",
-      "Fortus",
-      "Ponehorseman",
-      "Mêgatron",
-      "Ogblazs",
-      "Solargalaxy",
-      "Diestofire",
-      "Magesaur",
-      "Dotzíla",
-      "Catterpie",
-      "Charlotteros",
-      "Brolusk",
-      "Cøsmiccow",
-      "Røyaltree",
-      "Machîne",
+      { name: "Endersz", role: "Tank" },
+      { name: "Haveutried", role: "Tank" },
+      { name: "Quadraxes", role: "Healer" },
+      { name: "Rejudge", role: "Healer" },
+      { name: "Noçtis", role: "Healer" },
+      { name: "Vodin", role: "Healer" },
+      { name: "Lrodcairo", role: "Healer" },
+      { name: "Devô", role: "Melee DPS" },
+      { name: "Zerosrog", role: "Melee DPS" },
+      { name: "Argentzelda", role: "Melee DPS" },
+      { name: "Youfus", role: "Melee DPS" },
+      { name: "Fischa", role: "Melee DPS" },
+      { name: "Sigard", role: "Melee DPS" },
+      { name: "Fortus", role: "Melee DPS" },
+      { name: "Ponehorseman", role: "Melee DPS" },
+      { name: "Mêgatron", role: "Melee DPS" },
+      { name: "Ogblazs", role: "Ranged DPS" },
+      { name: "Solargalaxy", role: "Ranged DPS" },
+      { name: "Diestofire", role: "Ranged DPS" },
+      { name: "Magesaur", role: "Ranged DPS" },
+      { name: "Dotzíla", role: "Ranged DPS" },
+      { name: "Catterpie", role: "Ranged DPS" },
+      { name: "Charlotteros", role: "Ranged DPS" },
+      { name: "Brolusk", role: "Ranged DPS" },
+      { name: "Cøsmiccow", role: "Ranged DPS" },
+      { name: "Røyaltree", role: "Ranged DPS" },
+      { name: "Machîne", role: "Ranged DPS" },
     ],
   }),
 
@@ -102,18 +110,30 @@ export default {
         this.data.length
       ).toFixed(2);
     },
+    healerCount() {
+      return this.data.filter((d) => d.role == "Healer").length;
+    },
+    rangedCount() {
+      return this.data.filter((d) => d.role == "Ranged DPS").length;
+    },
+    meleeCount() {
+      return this.data.filter((d) => d.role == "Melee DPS").length;
+    },
+    tankCount() {
+      return this.data.filter((d) => d.role == "Tank").length;
+    },
   },
 
   methods: {
     getData() {
       this.raiders.forEach((raider) => {
-        const url = `${this.raiderioUrl}&realm=${this.server}&name=${raider}&fields=${this.raiderioFields}`;
+        const url = `${this.raiderioUrl}&realm=${this.server}&name=${raider.name}&fields=${this.raiderioFields}`;
         this.$http.get(url).then((result) => {
           this.data.push({
-            name: raider,
+            name: raider.name,
             ilvl: result.data.gear.item_level_equipped,
             mplus: result.data.mythic_plus_weekly_highest_level_runs,
-            role: result.data.active_spec_role,
+            role: raider.role,
             class: result.data.class,
             spec: result.data.active_spec_name,
           });
@@ -127,6 +147,24 @@ export default {
       else if (ilvl > 340) return "grey";
       else return "red";
     },
+    getSortParam(sortOrder) {
+      return sortOrder
+        .map(function (sort) {
+          return (sort.direction === "desc" ? "-" : "") + sort.field;
+        })
+        .join(",");
+    },
+    sort(a, b) {
+      if (this.getSortValue(a) < this.getSortValue(b)) return 1;
+      if (this.getSortValue(a) > this.getSortValue(b)) return -1;
+      return 0;
+    },
+    getSortValue(role) {
+      if (role == "Tank") return 1;
+      if (role == "Healer") return 2;
+      if (role == "Melee DPS") return 3;
+      if (role == "Ranged DPS") return 4;
+    }
   },
 
   mounted() {
