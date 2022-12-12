@@ -1,45 +1,92 @@
 <template>
   <div class="container">
-    <div clas="row">
-      <a href="https://www.thechurchguild.info/"><h1>The Church</h1></a>
-      Number of Raiders: {{ data.length }} | Average ilvl: {{ averageIlvl }}
-      <br />
-      Tank: {{ tankCount }} | Healers: {{ healerCount }} | DPS: {{ rangedCount + meleeCount }}
-      <br />
-      Melee DPS: {{ meleeCount }} | Ranged DPS: {{ rangedCount }}
-      <p></p>
+    <div class="row">
+      <div class="col-4">
+        <v-card color="#3333aa" dark>
+          <v-card-title>
+            <span class="text-h6 font-weight-light">Composition</span>
+          </v-card-title>
+
+          <v-card-text class="text-h5 font-weight-bold">
+            <span class="text-h6 font-weight-light">Tank:</span> {{ tankCount
+            }}<br />
+            <span class="text-h6 font-weight-light">Healers:</span>
+            {{ healerCount }}<br />
+            <span class="text-h6 font-weight-light">DPS:</span>
+            {{ rangedCount + meleeCount }}<br />
+            <span class="text-h6 font-weight-light">Melee DPS:</span>
+            {{ meleeCount }}<br />
+            <span class="text-h6 font-weight-light">Ranged DPS:</span>
+            {{ rangedCount }}
+          </v-card-text>
+        </v-card>
+      </div>
+      <div class="col-4">
+        <v-card color="#aa3333" dark>
+          <v-card-title>
+            <span class="text-h6 font-weight-light">Stats</span>
+          </v-card-title>
+
+          <v-card-text class="text-h5 font-weight-bold">
+            <span class="text-h6 font-weight-light">Number of Raiders:</span>
+            {{ data.length }} <br />
+            <span class="text-h6 font-weight-light">Average ilvl:</span>
+            {{ averageIlvl }}<br />
+          </v-card-text>
+        </v-card>
+      </div>
+      <div class="col-4">
+        <v-card color="#33aa33" dark>
+          <v-card-title>
+            <span class="text-h6 font-weight-light">Progression</span>
+          </v-card-title>
+
+          <v-card-text class="text-h5 font-weight-bold">
+            <span class="text-h6 font-weight-light"
+              >Vault of the Incarnates:</span
+            >
+            <br />
+            0/8 Mythic <br />
+            0/8 Heroic <br />
+            0/8 Normal <br />
+          </v-card-text>
+        </v-card>
+      </div>
     </div>
     <div class="row">
-      <v-card>
-        <v-card-title>
-          <v-text-field
-            v-model="search"
-            append-icon="mdi-magnify"
-            label="Search"
-            single-line
-            hide-details
-          ></v-text-field>
-        </v-card-title>
-        <v-data-table
-          :headers="headers"
-          :items="data"
-          :search="search"
-          disable-pagination
-          hide-default-footer
-          multi-sort
-          :sort-by.sync="sortBy"
-          :sort-desc.sync="sortDesc"
-        >
-          <template v-slot:[`item.name`]="{ item }">
-            <b class="text-uppercase">{{ item.name }}</b>
-          </template>
-          <template v-slot:[`item.ilvl`]="{ item }">
-            <v-chip :color="getColor(item.ilvl)" dark>
-              {{ item.ilvl }}
-            </v-chip>
-          </template>
-        </v-data-table>
-      </v-card>
+      <div class="col">
+        <v-card dark>
+          <v-card-title>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+            :headers="headers"
+            :items="data"
+            :search="search"
+            disable-pagination
+            hide-default-footer
+            multi-sort
+            :sort-by.sync="sortBy"
+            :sort-desc.sync="sortDesc"
+            dark
+          >
+            <template v-slot:[`item.name`]="{ item }">
+              <b class="text-uppercase">{{ item.name }}</b>
+            </template>
+            <template v-slot:[`item.ilvl`]="{ item }">
+              <v-chip :color="getColor(item.ilvl)" dark>
+                {{ item.ilvl }}
+              </v-chip>
+            </template>
+          </v-data-table>
+        </v-card>
+      </div>
     </div>
   </div>
 </template>
@@ -164,7 +211,7 @@ export default {
       if (role == "Healer") return 2;
       if (role == "Melee DPS") return 3;
       if (role == "Ranged DPS") return 4;
-    }
+    },
   },
 
   mounted() {
