@@ -79,6 +79,23 @@
             <template v-slot:[`item.name`]="{ item }">
               <b class="text-uppercase">{{ item.name }}</b>
             </template>
+            <template v-slot:[`item.armory`]="{ item }">
+              <a
+                :href="
+                  'https://worldofwarcraft.com/en-us/character/us/' +
+                  item.armory
+                "
+                target="_blank"
+                ><img src="https://i.imgur.com/WQylPcH.png" height="30px"
+              /></a>
+              <a
+                :href="'https://raider.io/characters/us/' + item.rio"
+                target="_blank"
+                ><img
+                  src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
+                  height="30px"
+              /></a>
+            </template>
             <template v-slot:[`item.ilvl`]="{ item }">
               <v-chip :color="getColor(item.ilvl)" dark>
                 {{ item.ilvl }}
@@ -97,6 +114,7 @@ export default {
 
   data: (vm) => ({
     headers: [
+      { text: "", value: "armory", align: "end" },
       { text: "Raider", value: "name", align: "start" },
       { text: "Class", value: "class", align: "end" },
       { text: "Spec", value: "spec", align: "end" },
@@ -183,16 +201,21 @@ export default {
             role: raider.role,
             class: result.data.class,
             spec: result.data.active_spec_name,
+            armory: this.server + "/" + raider.name,
+            rio: this.server + "/" + raider.name,
           });
         });
       });
     },
     getColor(ilvl) {
-      if (ilvl > 375) return "orange";
-      else if (ilvl > 370) return "purple";
-      else if (ilvl > 360) return "blue";
-      else if (ilvl > 340) return "grey";
-      else return "red";
+      if (ilvl >= 421) return "#ff8000";
+      else if (ilvl >= 408) return "#a335ee";
+      else if (ilvl >= 395) return "#0070dd";
+      else if (ilvl >= 382) return "#33aa33";
+      else if (ilvl >= 372) return "#a335ee";
+      else if (ilvl >= 359) return "#33aa33";
+      else if (ilvl >= 346) return "#9d9d9d";
+      else return "#9d9d9d";
     },
     getSortParam(sortOrder) {
       return sortOrder
