@@ -127,7 +127,8 @@ export default {
         },
       },
       { text: "ilvl", value: "ilvl", align: "center" },
-      { text: "Latest M+", value: "mplus" },
+      { text: "M+ Rating", value: "mplusRating", align: "end" },
+      { text: "Highest Weekly M+", value: "mplus", align: "end" },
     ],
     sortBy: ["role", "ilvl"],
     sortDesc: [true, true],
@@ -135,7 +136,8 @@ export default {
     stats: [],
     search: "",
     raiderioUrl: "https://raider.io/api/v1/characters/profile?region=us",
-    raiderioFields: "mythic_plus_weekly_highest_level_runs%2Cgear",
+    raiderioFields:
+      "mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear",
     server: "illidan",
     raiders: [
       { name: "Endersz", role: "Tank" },
@@ -197,8 +199,18 @@ export default {
           this.data.push({
             name: raider.name,
             ilvl: result.data.gear.item_level_equipped,
-            mplus: result.data.mythic_plus_weekly_highest_level_runs,
+            mplus:
+              result.data.mythic_plus_weekly_highest_level_runs.length > 0
+                ? result.data.mythic_plus_weekly_highest_level_runs.reduce(
+                    (prev, current) => {
+                      return prev.mythic_level > current.mythic_level
+                        ? prev
+                        : current;
+                    }
+                  ).mythic_level
+                : 0,
             role: raider.role,
+            mplusRating: result.data.mythic_plus_scores_by_season[0].scores.all,
             class: result.data.class,
             spec: result.data.active_spec_name,
             armory: this.server + "/" + raider.name,
