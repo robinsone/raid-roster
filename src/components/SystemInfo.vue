@@ -48,7 +48,7 @@
             <br />
             0/8 Mythic <br />
             0/8 Heroic <br />
-            0/8 Normal <br />
+            6/8 Normal <br />
           </v-card-text>
         </v-card>
       </div>
@@ -101,6 +101,16 @@
                 {{ item.ilvl }}
               </v-chip>
             </template>
+            <template v-slot:[`item.mplusRating`]="{ item }">
+              <v-chip :color="primary" dark>
+                {{ item.mplusRating }}
+              </v-chip>
+            </template>
+            <template v-slot:[`item.mplus`]="{ item }">
+              <v-chip :color="primary" dark>
+                {{ "+" + item.mplus.toString() }}
+              </v-chip>
+            </template>
           </v-data-table>
         </v-card>
       </div>
@@ -128,7 +138,7 @@ export default {
       },
       { text: "ilvl", value: "ilvl", align: "center" },
       { text: "M+ Rating", value: "mplusRating", align: "end" },
-      { text: "Highest Weekly M+", value: "mplus", align: "end" },
+      { text: "Highest Weekly M+", value: "mplus", align: "center" },
     ],
     sortBy: ["role", "ilvl"],
     sortDesc: [true, true],
@@ -164,7 +174,7 @@ export default {
       { name: "Catterpie", role: "Ranged DPS" },
       { name: "Charlotteros", role: "Ranged DPS" },
       { name: "Brolusk", role: "Ranged DPS" },
-      { name: "Cøsmiccow", role: "Ranged DPS" },
+      // { name: "Cøsmiccow", role: "Ranged DPS" },
       { name: "Røyaltree", role: "Ranged DPS" },
       { name: "Machîne", role: "Ranged DPS" },
     ],
@@ -199,8 +209,7 @@ export default {
           this.data.push({
             name: raider.name,
             ilvl: result.data.gear.item_level_equipped,
-            mplus:
-              result.data.mythic_plus_weekly_highest_level_runs.length > 0
+            mplus: result.data.mythic_plus_weekly_highest_level_runs.length > 0
                 ? result.data.mythic_plus_weekly_highest_level_runs.reduce(
                     (prev, current) => {
                       return prev.mythic_level > current.mythic_level
