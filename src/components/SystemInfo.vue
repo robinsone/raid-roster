@@ -47,7 +47,7 @@
             >
             <br />
             0/8 Mythic <br />
-            0/8 Heroic <br />
+            1/8 Heroic <br />
             6/8 Normal <br />
           </v-card-text>
         </v-card>
@@ -151,7 +151,7 @@ export default {
     server: "illidan",
     raiders: [
       { name: "Endersz", role: "Tank" },
-      { name: "Haveutried", role: "Tank" },
+      { name: "Twifferclap", role: "Tank" },
       { name: "Quadraxes", role: "Healer" },
       { name: "Rejudge", role: "Healer" },
       { name: "Noçtis", role: "Healer" },
