@@ -36,7 +36,7 @@
         </v-card>
       </div>
       <div class="col-4">
-        <v-card color="#33aa33" dark>
+        <v-card color="#33aa33" dark v-show="guildProgress">
           <v-card-title>
             <span class="text-h6 font-weight-light">Progression</span>
           </v-card-title>
@@ -46,9 +46,24 @@
               >Vault of the Incarnates:</span
             >
             <br />
-            0/8 Mythic <br />
-            1/8 Heroic <br />
-            6/8 Normal <br />
+            {{
+              guildProgress["vault-of-the-incarnates"].mythic_bosses_killed
+            }}/{{
+              guildProgress["vault-of-the-incarnates"].total_bosses
+            }}
+            Mythic <br />
+            {{
+              guildProgress["vault-of-the-incarnates"].heroic_bosses_killed
+            }}/{{
+              guildProgress["vault-of-the-incarnates"].total_bosses
+            }}
+            Heroic <br />
+            {{
+              guildProgress["vault-of-the-incarnates"].normal_bosses_killed
+            }}/{{
+              guildProgress["vault-of-the-incarnates"].total_bosses
+            }}
+            Normal <br />
           </v-card-text>
         </v-card>
       </div>
@@ -143,6 +158,7 @@ export default {
     sortBy: ["role", "ilvl"],
     sortDesc: [true, true],
     data: [],
+    guildProgress: null,
     stats: [],
     search: "",
     raiderioUrl: "https://raider.io/api/v1/characters/profile?region=us",
@@ -209,7 +225,8 @@ export default {
           this.data.push({
             name: raider.name,
             ilvl: result.data.gear.item_level_equipped,
-            mplus: result.data.mythic_plus_weekly_highest_level_runs.length > 0
+            mplus:
+              result.data.mythic_plus_weekly_highest_level_runs.length > 0
                 ? result.data.mythic_plus_weekly_highest_level_runs.reduce(
                     (prev, current) => {
                       return prev.mythic_level > current.mythic_level
@@ -226,6 +243,12 @@ export default {
             rio: this.server + "/" + raider.name,
           });
         });
+      });
+    },
+    getGuildProgress() {
+      const url = `https://raider.io/api/v1/guilds/profile?region=us&realm=illidan&name=the%20church&fields=raid_progression`;
+      this.$http.get(url).then((result) => {
+        this.guildProgress = result.data.raid_progression;
       });
     },
     getColor(ilvl) {
@@ -259,6 +282,7 @@ export default {
   },
 
   mounted() {
+    this.getGuildProgress();
     this.getData();
   },
 };
