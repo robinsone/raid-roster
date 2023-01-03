@@ -189,7 +189,7 @@ export default {
       { name: "Catterpie", role: "Ranged DPS" },
       { name: "Charlotteros", role: "Ranged DPS" },
       { name: "Brolusk", role: "Ranged DPS" },
-      { name: "Røyaltree", role: "Ranged DPS" },
+      { name: "Grotøk", role: "Ranged DPS" },
       { name: "Machîne", role: "Ranged DPS" },
       { name: "Bambabamba", role: "Melee DPS" },
       // { name: "Cøsmiccow", role: "Ranged DPS" },
