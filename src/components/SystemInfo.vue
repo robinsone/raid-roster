@@ -192,6 +192,7 @@ export default {
       { name: "Grotøk", role: "Ranged DPS" },
       { name: "Machîne", role: "Ranged DPS" },
       { name: "Bambabamba", role: "Melee DPS" },
+      { name: "Reaais", role: "Melee DPS" },
       // { name: "Cøsmiccow", role: "Ranged DPS" },
     ],
   }),
