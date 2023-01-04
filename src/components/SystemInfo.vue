@@ -1,28 +1,27 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-4">
-        <v-card color="#3333aa" dark>
+      <div class="col-sm-4">
+        <v-card color="#333333" dark>
           <v-card-title>
             <span class="text-h6 font-weight-light">Composition</span>
           </v-card-title>
-
           <v-card-text class="text-h5 font-weight-bold">
-            <span class="text-h6 font-weight-light">Tank:</span> {{ tankCount
-            }}<br />
+            <span class="text-h6 font-weight-light">Tank:</span> {{ tankCount }}
             <span class="text-h6 font-weight-light">Healers:</span>
-            {{ healerCount }}<br />
+            {{ healerCount }}
             <span class="text-h6 font-weight-light">DPS:</span>
             {{ rangedCount + meleeCount }}<br />
             <span class="text-h6 font-weight-light">Melee DPS:</span>
-            {{ meleeCount }}<br />
+            {{ meleeCount }}
             <span class="text-h6 font-weight-light">Ranged DPS:</span>
             {{ rangedCount }}
           </v-card-text>
         </v-card>
       </div>
-      <div class="col-4">
-        <v-card color="#aa3333" dark>
+
+      <div class="col-sm-4">
+        <v-card color="#555555" dark>
           <v-card-title>
             <span class="text-h6 font-weight-light">Stats</span>
           </v-card-title>
@@ -35,35 +34,74 @@
           </v-card-text>
         </v-card>
       </div>
-      <div class="col-4">
-        <v-card color="#33aa33" dark v-show="guildProgress">
+      <div class="col-sm-4">
+        <v-card color="#777" dark>
           <v-card-title>
-            <span class="text-h6 font-weight-light">Progression</span>
+            <span class="text-h6 font-weight-light">Links</span>
           </v-card-title>
 
           <v-card-text class="text-h5 font-weight-bold">
+            <v-btn
+              depressed
+              href="https://github.com/robinsone/raid-roster/wiki"
+            >
+              Wiki
+            </v-btn>
+            <v-btn
+              class="ml-1"
+              depressed
+              href="https://github.com/robinsone/raid-roster/wiki/Loot-Rules"
+            >
+              Loot Rules
+            </v-btn>
+            <v-btn
+              class="ml-1"
+              depressed
+              href="https://github.com/robinsone/raid-roster/wiki/ERT-Notes"
+            >
+              ERT-Notes
+            </v-btn>
+          </v-card-text>
+        </v-card>
+      </div>
+      <div class="col-sm-12">
+        <v-card color="#999999" dark v-show="guildProgress">
+          <v-card-title>
+            <span class="text-h6 font-weight-light">
+              Progression - Dragonflight
+            </span>
+          </v-card-title>
+
+          <v-card-text class="text-h6 font-weight-bold">
             <span class="text-h6 font-weight-light"
               >Vault of the Incarnates:</span
             >
             <br />
-            {{
-              guildProgress["vault-of-the-incarnates"].mythic_bosses_killed
-            }}/{{
-              guildProgress["vault-of-the-incarnates"].total_bosses
-            }}
-            Mythic <br />
-            {{
-              guildProgress["vault-of-the-incarnates"].heroic_bosses_killed
-            }}/{{
-              guildProgress["vault-of-the-incarnates"].total_bosses
-            }}
-            Heroic <br />
-            {{
-              guildProgress["vault-of-the-incarnates"].normal_bosses_killed
-            }}/{{
-              guildProgress["vault-of-the-incarnates"].total_bosses
-            }}
-            Normal <br />
+            <div class="ml-6">
+              <ul>
+                <li>
+                  {{
+                    guildProgress["vault-of-the-incarnates"]
+                      .mythic_bosses_killed
+                  }}/{{ guildProgress["vault-of-the-incarnates"].total_bosses }}
+                  Mythic
+                </li>
+                <li>
+                  {{
+                    guildProgress["vault-of-the-incarnates"]
+                      .heroic_bosses_killed
+                  }}/{{ guildProgress["vault-of-the-incarnates"].total_bosses }}
+                  Heroic
+                </li>
+                <li>
+                  {{
+                    guildProgress["vault-of-the-incarnates"]
+                      .normal_bosses_killed
+                  }}/{{ guildProgress["vault-of-the-incarnates"].total_bosses }}
+                  Normal
+                </li>
+              </ul>
+            </div>
           </v-card-text>
         </v-card>
       </div>
@@ -95,21 +133,38 @@
               <b class="text-uppercase">{{ item.name }}</b>
             </template>
             <template v-slot:[`item.armory`]="{ item }">
-              <a
+              <v-btn
+                fab
+                dark
+                x-small
                 :href="
                   'https://worldofwarcraft.com/en-us/character/us/' +
                   item.armory
                 "
                 target="_blank"
                 ><img src="https://i.imgur.com/WQylPcH.png" height="30px"
-              /></a>
-              <a
+              /></v-btn>
+              <v-btn
+                fab
+                dark
+                x-small
                 :href="'https://raider.io/characters/us/' + item.rio"
                 target="_blank"
                 ><img
                   src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
                   height="30px"
-              /></a>
+              /></v-btn>
+              <v-btn
+                fab
+                dark
+                x-small
+                class="pa-0 ma-0"
+                height="30px"
+                width="30px"
+                :href="talentUrl + item.talentLoadout"
+                target="_blank"
+                >T
+              </v-btn>
             </template>
             <template v-slot:[`item.ilvl`]="{ item }">
               <v-chip :color="getColor(item.ilvl)" dark>
@@ -161,9 +216,10 @@ export default {
     guildProgress: null,
     stats: [],
     search: "",
+    talentUrl: "https://www.wowhead.com/talent-calc/blizzard/",
     raiderioUrl: "https://raider.io/api/v1/characters/profile?region=us",
     raiderioFields:
-      "mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear",
+      "mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear%2Ctalents",
     server: "illidan",
     raiders: [
       { name: "Endersz", role: "Tank" },
@@ -215,6 +271,9 @@ export default {
     tankCount() {
       return this.data.filter((d) => d.role == "Tank").length;
     },
+    talentLink(raider) {
+      return this.talentUrl + raider.talentLoadout;
+    },
   },
 
   methods: {
@@ -241,6 +300,7 @@ export default {
             spec: result.data.active_spec_name,
             armory: this.server + "/" + raider.name,
             rio: this.server + "/" + raider.name,
+            talentLoadout: result.data.talentLoadout.loadout_text,
           });
         });
       });
