@@ -170,7 +170,6 @@ export default {
       { name: "Twifferclap", role: "Tank" },
       { name: "Quadraxes", role: "Healer" },
       { name: "Rejudge", role: "Healer" },
-      { name: "Noçtis", role: "Healer" },
       { name: "Vodin", role: "Healer" },
       { name: "Lrodcairo", role: "Healer" },
       { name: "Devô", role: "Melee DPS" },
