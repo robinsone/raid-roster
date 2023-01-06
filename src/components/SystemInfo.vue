@@ -234,7 +234,6 @@ export default {
       { name: "Fischa", role: "Melee DPS" },
       { name: "Sigard", role: "Melee DPS" },
       { name: "Fortus", role: "Melee DPS" },
-      { name: "Ponehorseman", role: "Melee DPS" },
       { name: "Mêgatron", role: "Melee DPS" },
       { name: "Ogblazs", role: "Ranged DPS" },
       { name: "Solargalaxy", role: "Ranged DPS" },
