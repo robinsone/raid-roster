@@ -139,7 +139,7 @@
                 x-small
                 :href="
                   'https://worldofwarcraft.com/en-us/character/us/' +
-                  item.armory
+                  item.armory.toLower()
                 "
                 target="_blank"
                 ><img src="https://i.imgur.com/WQylPcH.png" height="30px"
@@ -148,7 +148,7 @@
                 fab
                 dark
                 x-small
-                :href="'https://raider.io/characters/us/' + item.rio"
+                :href="'https://raider.io/characters/us/' + item.rio.toLower()"
                 target="_blank"
                 ><img
                   src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
@@ -231,7 +231,7 @@ export default {
       { name: "Lrodcairo", role: "Healer" },
       { name: "Devô", role: "Melee DPS" },
       { name: "Zerosrog", role: "Melee DPS" },
-      { name: "Youfus", role: "Melee DPS" },
+      { name: "Youmus", role: "Melee DPS" },
       { name: "Fischa", role: "Melee DPS" },
       { name: "Sigard", role: "Melee DPS" },
       { name: "Fortus", role: "Melee DPS" },
