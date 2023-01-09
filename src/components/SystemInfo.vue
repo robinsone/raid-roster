@@ -300,8 +300,8 @@ export default {
             mplusRating: result.data.mythic_plus_scores_by_season[0].scores.all,
             class: result.data.class,
             spec: result.data.active_spec_name,
-            armory: this.server + "/" + raider.name,
-            rio: this.server + "/" + raider.name,
+            armory: this.server + "/" + encodeURIComponent(raider.name),
+            rio: this.server + "/" + encodeURIComponent(raider.name),
             talentLoadout: result.data.talentLoadout.loadout_text,
           });
         });
