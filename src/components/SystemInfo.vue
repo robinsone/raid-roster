@@ -139,7 +139,7 @@
                 x-small
                 :href="
                   'https://worldofwarcraft.com/en-us/character/us/' +
-                  item.armory.toLower()
+                  item.armory.toLowerCase()
                 "
                 target="_blank"
                 ><img src="https://i.imgur.com/WQylPcH.png" height="30px"
@@ -148,7 +148,9 @@
                 fab
                 dark
                 x-small
-                :href="'https://raider.io/characters/us/' + item.rio.toLower()"
+                :href="
+                  'https://raider.io/characters/us/' + item.rio.toLowerCase()
+                "
                 target="_blank"
                 ><img
                   src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
