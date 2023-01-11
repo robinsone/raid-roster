@@ -127,7 +127,10 @@
             multi-sort
             :sort-by.sync="sortBy"
             :sort-desc.sync="sortDesc"
+            :expanded.sync="expended"
             dark
+            item-key="name"
+            @click:row="(item, slot) => slot.expand(!slot.isExpanded)"
           >
             <template v-slot:[`item.name`]="{ item }">
               <b class="text-uppercase">{{ item.name }}</b>
@@ -183,6 +186,75 @@
                 {{ "+" + item.mplus.toString() }}
               </v-chip>
             </template>
+            <template v-slot:expanded-item="{ headers, item }">
+              <td :colspan="headers.length">
+                <v-data-table
+                  :headers="headers"
+                  hide-default-header
+                  :items="item.alt"
+                  disable-pagination
+                  hide-default-footer
+                  dark
+                  item-key="name"
+                >
+                  <template v-slot:[`item.name`]="{ item }">
+                    <b class="text-uppercase">{{ item.name }}</b>
+                  </template>
+                  <template v-slot:[`item.armory`]="{ item }">
+                    <v-btn
+                      fab
+                      dark
+                      x-small
+                      :href="
+                        'https://worldofwarcraft.com/en-us/character/us/' +
+                        item.armory.toLowerCase()
+                      "
+                      target="_blank"
+                      ><img src="https://i.imgur.com/WQylPcH.png" height="30px"
+                    /></v-btn>
+                    <v-btn
+                      fab
+                      dark
+                      x-small
+                      :href="
+                        'https://raider.io/characters/us/' +
+                        item.rio.toLowerCase()
+                      "
+                      target="_blank"
+                      ><img
+                        src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
+                        height="30px"
+                    /></v-btn>
+                    <v-btn
+                      fab
+                      dark
+                      x-small
+                      class="pa-0 ma-0"
+                      height="30px"
+                      width="30px"
+                      :href="talentUrl + item.talentLoadout"
+                      target="_blank"
+                      >T
+                    </v-btn>
+                  </template>
+                  <template v-slot:[`item.ilvl`]="{ item }">
+                    <v-chip :color="getColor(item.ilvl)" dark>
+                      {{ item.ilvl }}
+                    </v-chip>
+                  </template>
+                  <template v-slot:[`item.mplusRating`]="{ item }">
+                    <v-chip :color="primary" dark>
+                      {{ item.mplusRating }}
+                    </v-chip>
+                  </template>
+                  <template v-slot:[`item.mplus`]="{ item }">
+                    <v-chip :color="primary" dark>
+                      {{ "+" + item.mplus.toString() }}
+                    </v-chip>
+                  </template>
+                </v-data-table>
+              </td>
+            </template>
           </v-data-table>
         </v-card>
       </div>
@@ -215,6 +287,7 @@ export default {
     sortBy: ["role", "ilvl"],
     sortDesc: [true, true],
     data: [],
+    expanded: [],
     guildProgress: null,
     stats: [],
     search: "",
@@ -224,14 +297,32 @@ export default {
       "mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear%2Ctalents",
     server: "illidan",
     raiders: [
-      { name: "Endersz", role: "Tank" },
-      { name: "Twifferclap", role: "Tank" },
+      {
+        name: "Endersz",
+        role: "Tank",
+        alt: [{ name: "Bufomyva", role: "Ranged DPS" }],
+      },
+      {
+        name: "Twifferclap",
+        role: "Tank",
+        alt: [{ name: "Grandmaspoon", role: "Tank" }],
+      },
       { name: "Quadraxes", role: "Healer" },
-      // { name: "Rejudge", role: "Healer" },
-      { name: "Judgedraco", role: "Healer" },
+      {
+        name: "Judgedraco",
+        role: "Healer",
+        alt: [
+          { name: "Rejudge", role: "Healer" },
+          { name: "Judgéd", role: "Healer" },
+        ],
+      },
       { name: "Vodin", role: "Healer" },
       { name: "Lrodcairo", role: "Healer" },
-      { name: "Devô", role: "Melee DPS" },
+      {
+        name: "Devô",
+        role: "Melee DPS",
+        alt: [{ name: "Demonicdevo", role: "Melee DPS" }],
+      },
       { name: "Zerosrog", role: "Melee DPS" },
       { name: "Youmus", role: "Melee DPS" },
       { name: "Fischa", role: "Melee DPS" },
@@ -247,8 +338,16 @@ export default {
       { name: "Charlotteros", role: "Ranged DPS" },
       { name: "Brolusk", role: "Ranged DPS" },
       { name: "Grotøk", role: "Ranged DPS" },
-      { name: "Machîne", role: "Ranged DPS" },
-      { name: "Bambabamba", role: "Melee DPS" },
+      {
+        name: "Machîne",
+        role: "Ranged DPS",
+        alt: [{ name: "Machiñe", role: "Tank" }],
+      },
+      {
+        name: "Bambabamba",
+        role: "Melee DPS",
+        alt: [{ name: "Argentzelda", role: "Melee DPS" }],
+      },
       { name: "Reaais", role: "Melee DPS" },
       // { name: "Cøsmiccow", role: "Ranged DPS" },
     ],
@@ -281,30 +380,69 @@ export default {
   methods: {
     getData() {
       this.raiders.forEach((raider) => {
-        const url = `${this.raiderioUrl}&realm=${this.server}&name=${raider.name}&fields=${this.raiderioFields}`;
-        this.$http.get(url).then((result) => {
-          this.data.push({
-            name: raider.name,
-            ilvl: result.data.gear.item_level_equipped,
-            mplus:
-              result.data.mythic_plus_weekly_highest_level_runs.length > 0
-                ? result.data.mythic_plus_weekly_highest_level_runs.reduce(
-                    (prev, current) => {
-                      return prev.mythic_level > current.mythic_level
-                        ? prev
-                        : current;
-                    }
-                  ).mythic_level
-                : 0,
-            role: raider.role,
-            mplusRating: result.data.mythic_plus_scores_by_season[0].scores.all,
-            class: result.data.class,
-            spec: result.data.active_spec_name,
-            armory: this.server + "/" + encodeURIComponent(raider.name),
-            rio: this.server + "/" + encodeURIComponent(raider.name),
-            talentLoadout: result.data.talentLoadout.loadout_text,
+        let alts = [];
+        if (raider.alt) {
+          raider.alt.forEach((alt) => {
+            this.$http
+              .get(
+                `${this.raiderioUrl}&realm=${this.server}&name=${alt.name}&fields=${this.raiderioFields}`
+              )
+              .then((result) => {
+                alts.push({
+                  name: alt.name,
+                  ilvl: result.data.gear.item_level_equipped,
+                  mplus:
+                    result.data.mythic_plus_weekly_highest_level_runs.length > 0
+                      ? result.data.mythic_plus_weekly_highest_level_runs.reduce(
+                          (prev, current) => {
+                            return prev.mythic_level > current.mythic_level
+                              ? prev
+                              : current;
+                          }
+                        ).mythic_level
+                      : 0,
+                  role: alt.role,
+                  mplusRating:
+                    result.data.mythic_plus_scores_by_season[0].scores.all,
+                  class: result.data.class,
+                  spec: result.data.active_spec_name,
+                  armory: this.server + "/" + encodeURIComponent(alt.name),
+                  rio: this.server + "/" + encodeURIComponent(alt.name),
+                  talentLoadout: result.data.talentLoadout.loadout_text,
+                });
+              });
           });
-        });
+        }
+
+        this.$http
+          .get(
+            `${this.raiderioUrl}&realm=${this.server}&name=${raider.name}&fields=${this.raiderioFields}`
+          )
+          .then((result) => {
+            this.data.push({
+              name: raider.name,
+              ilvl: result.data.gear.item_level_equipped,
+              mplus:
+                result.data.mythic_plus_weekly_highest_level_runs.length > 0
+                  ? result.data.mythic_plus_weekly_highest_level_runs.reduce(
+                      (prev, current) => {
+                        return prev.mythic_level > current.mythic_level
+                          ? prev
+                          : current;
+                      }
+                    ).mythic_level
+                  : 0,
+              role: raider.role,
+              mplusRating:
+                result.data.mythic_plus_scores_by_season[0].scores.all,
+              class: result.data.class,
+              spec: result.data.active_spec_name,
+              armory: this.server + "/" + encodeURIComponent(raider.name),
+              rio: this.server + "/" + encodeURIComponent(raider.name),
+              talentLoadout: result.data.talentLoadout.loadout_text,
+              alt: alts,
+            });
+          });
       });
     },
     getGuildProgress() {
