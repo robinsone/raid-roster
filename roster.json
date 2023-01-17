@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Endersz",
+    "role": "Tank",
+    "alt": [
+      {
+        "name": "Bufomyva",
+        "role": "Ranged DPS"
+      }
+    ]
+  },
+  {
+    "name": "Twifferclap",
+    "role": "Tank",
+    "alt": [
+      {
+        "name": "Grandmaspoon",
+        "role": "Tank"
+      }
+    ]
+  },
+  {
+    "name": "Quadraxes",
+    "role": "Healer"
+  },
+  {
+    "name": "Judgedraco",
+    "role": "Healer",
+    "alt": [
+      {
+        "name": "Rejudge",
+        "role": "Healer"
+      },
+      {
+        "name": "Judgéd",
+        "role": "Healer"
+      }
+    ]
+  },
+  {
+    "name": "Vodin",
+    "role": "Healer"
+  },
+  {
+    "name": "Lrodcairo",
+    "role": "Healer"
+  },
+  {
+    "name": "Devô",
+    "role": "Melee DPS",
+    "alt": [
+      {
+        "name": "Demonicdevo",
+        "role": "Melee DPS"
+      }
+    ]
+  },
+  {
+    "name": "Aambulance",
+    "role": "Healer"
+  },
+  {
+    "name": "Zerosrog",
+    "role": "Melee DPS"
+  },
+  {
+    "name": "Youmus",
+    "role": "Melee DPS"
+  },
+  {
+    "name": "Fischa",
+    "role": "Melee DPS"
+  },
+  {
+    "name": "Sigard",
+    "role": "Melee DPS"
+  },
+  {
+    "name": "Fortus",
+    "role": "Melee DPS"
+  },
+  {
+    "name": "Mêgatron",
+    "role": "Melee DPS"
+  },
+  {
+    "name": "Ogblazs",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Solargalaxy",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Diestofire",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Magesaur",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Dotzíla",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Catterpie",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Charlotteros",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Brolusk",
+    "role": "Ranged DPS"
+  },
+  {
+    "name": "Machîne",
+    "role": "Ranged DPS",
+    "alt": [
+      {
+        "name": "Machiñe",
+        "role": "Tank"
+      }
+    ]
+  },
+  {
+    "name": "Bambabamba",
+    "role": "Melee DPS",
+    "alt": [
+      {
+        "name": "Argentzelda",
+        "role": "Melee DPS"
+      }
+    ]
+  },
+  {
+    "name": "Reaais",
+    "role": "Melee DPS"
+  }
+]

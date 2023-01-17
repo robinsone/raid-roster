@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-console */
-const execa = require("execa");
 const fs = require("fs");
+const execa = require("execa");
 (async () => {
   try {
     // eslint-disable-next-line no-console
