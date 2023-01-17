@@ -323,7 +323,7 @@ export default {
         role: "Melee DPS",
         alt: [{ name: "Demonicdevo", role: "Melee DPS" }],
       },
-      { name: "Phistical", role: "Healer" },
+      { name: "Aambulance", role: "Healer" },
       { name: "Zerosrog", role: "Melee DPS" },
       { name: "Youmus", role: "Melee DPS" },
       { name: "Fischa", role: "Melee DPS" },

@@ -10,7 +10,7 @@ const fs = require("fs");
     const folderName = fs.existsSync("dist") ? "dist" : "build";
     await execa("git", ["add", folderName]);
     console.log("Pushing to gh-pages...");
-    await execa("git", ["commit", "-m", "dist subtree commit"]);
+    await execa("git", ["commit", "-m", "gh-pages deploy commit"]);
     await execa("git", [
       "subtree",
       "push",
