@@ -1,142 +1,82 @@
 [
   {
-    "name": "Endersz",
+    "name": "Akranil",
     "role": "Tank",
-    "alt": [
-      {
-        "name": "Bufomyva",
-        "role": "Ranged DPS"
-      }
-    ]
   },
   {
-    "name": "Twifferclap",
+    "name": "Nelfarion",
     "role": "Tank",
-    "alt": [
-      {
-        "name": "Grandmaspoon",
-        "role": "Tank"
-      }
-    ]
   },
   {
-    "name": "Quadraxes",
+    "name": "Odasper",
     "role": "Healer"
   },
   {
-    "name": "Judgedraco",
+    "name": "Joshehpriest",
     "role": "Healer",
-    "alt": [
-      {
-        "name": "Rejudge",
-        "role": "Healer"
-      },
-      {
-        "name": "Judgéd",
-        "role": "Healer"
-      }
-    ]
   },
   {
-    "name": "Vodin",
+    "name": "Cutepuppyxo",
     "role": "Healer"
   },
   {
-    "name": "Lrodcairo",
+    "name": "Salukai",
     "role": "Healer"
   },
   {
-    "name": "Devô",
-    "role": "Melee DPS",
-    "alt": [
-      {
-        "name": "Demonicdevo",
-        "role": "Melee DPS"
-      }
-    ]
+    "name": "Noçtis",
+    "role": "Healer",
   },
   {
-    "name": "Aambulance",
+    "name": "Huwix",
     "role": "Healer"
   },
   {
-    "name": "Zerosrog",
+    "name": "Audiotm",
     "role": "Melee DPS"
   },
   {
-    "name": "Youmus",
+    "name": "Soniathrym",
     "role": "Melee DPS"
   },
   {
-    "name": "Fischa",
+    "name": "Xdiin",
     "role": "Melee DPS"
   },
   {
-    "name": "Sigard",
+    "name": "Znatch",
     "role": "Melee DPS"
   },
   {
-    "name": "Fortus",
+    "name": "Tkaz",
     "role": "Melee DPS"
   },
   {
-    "name": "Mêgatron",
-    "role": "Melee DPS"
-  },
-  {
-    "name": "Ogblazs",
+    "name": "Mortreides",
     "role": "Ranged DPS"
   },
   {
-    "name": "Solargalaxy",
+    "name": "Belgast",
     "role": "Ranged DPS"
   },
   {
-    "name": "Diestofire",
+    "name": "Comics",
     "role": "Ranged DPS"
   },
   {
-    "name": "Magesaur",
+    "name": "Tumxtum",
     "role": "Ranged DPS"
   },
   {
-    "name": "Dotzíla",
+    "name": "Jeremia",
     "role": "Ranged DPS"
   },
   {
-    "name": "Catterpie",
+    "name": "Zenrawrr",
     "role": "Ranged DPS"
   },
   {
-    "name": "Charlotteros",
+    "name": "Darkzig",
     "role": "Ranged DPS"
   },
-  {
-    "name": "Brolusk",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Machîne",
-    "role": "Ranged DPS",
-    "alt": [
-      {
-        "name": "Machiñe",
-        "role": "Tank"
-      }
-    ]
-  },
-  {
-    "name": "Bambabamba",
-    "role": "Melee DPS",
-    "alt": [
-      {
-        "name": "Argentzelda",
-        "role": "Melee DPS"
-      }
-    ]
-  },
-  {
-    "name": "Reaais",
-    "role": "Melee DPS"
-  }
 ]
