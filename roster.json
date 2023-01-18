@@ -1,82 +1,82 @@
 [
-  {
-    "name": "Akranil",
-    "role": "Tank",
-  },
-  {
-    "name": "Nelfarion",
-    "role": "Tank",
-  },
-  {
-    "name": "Odasper",
-    "role": "Healer"
-  },
-  {
-    "name": "Joshehpriest",
-    "role": "Healer",
-  },
-  {
-    "name": "Cutepuppyxo",
-    "role": "Healer"
-  },
-  {
-    "name": "Salukai",
-    "role": "Healer"
-  },
-  {
-    "name": "Noçtis",
-    "role": "Healer",
-  },
-  {
-    "name": "Huwix",
-    "role": "Healer"
-  },
-  {
-    "name": "Audiotm",
-    "role": "Melee DPS"
-  },
-  {
-    "name": "Soniathrym",
-    "role": "Melee DPS"
-  },
-  {
-    "name": "Xdiin",
-    "role": "Melee DPS"
-  },
-  {
-    "name": "Znatch",
-    "role": "Melee DPS"
-  },
-  {
-    "name": "Tkaz",
-    "role": "Melee DPS"
-  },
-  {
-    "name": "Mortreides",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Belgast",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Comics",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Tumxtum",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Jeremia",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Zenrawrr",
-    "role": "Ranged DPS"
-  },
-  {
-    "name": "Darkzig",
-    "role": "Ranged DPS"
-  },
+   {
+      "name":"Akranil",
+      "role":"Tank"
+   },
+   {
+      "name":"Nelfarion",
+      "role":"Tank"
+   },
+   {
+      "name":"Odasper",
+      "role":"Healer"
+   },
+   {
+      "name":"Joshehpriest",
+      "role":"Healer"
+   },
+   {
+      "name":"Cutepuppyxo",
+      "role":"Healer"
+   },
+   {
+      "name":"Salukai",
+      "role":"Healer"
+   },
+   {
+      "name":"Noçtis",
+      "role":"Healer"
+   },
+   {
+      "name":"Huwix",
+      "role":"Healer"
+   },
+   {
+      "name":"Audiotm",
+      "role":"Melee DPS"
+   },
+   {
+      "name":"Soniathrym",
+      "role":"Melee DPS"
+   },
+   {
+      "name":"Xdiin",
+      "role":"Melee DPS"
+   },
+   {
+      "name":"Znatch",
+      "role":"Melee DPS"
+   },
+   {
+      "name":"Tkaz",
+      "role":"Melee DPS"
+   },
+   {
+      "name":"Mortreides",
+      "role":"Ranged DPS"
+   },
+   {
+      "name":"Belgast",
+      "role":"Ranged DPS"
+   },
+   {
+      "name":"Comics",
+      "role":"Ranged DPS"
+   },
+   {
+      "name":"Tumxtum",
+      "role":"Ranged DPS"
+   },
+   {
+      "name":"Jeremia",
+      "role":"Ranged DPS"
+   },
+   {
+      "name":"Zenrawrr",
+      "role":"Ranged DPS"
+   },
+   {
+      "name":"Darkzig",
+      "role":"Ranged DPS"
+   }
 ]
