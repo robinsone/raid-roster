@@ -1,12 +1,14 @@
 <!-- eslint-disable vue/no-template-shadow -->
 <template>
-  <section id="intro" class="py-1">
+  <section id="intro" class="py-16">
     <v-container>
       <v-row cols="12" sm="4">
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 font-weight-light">Composition</span>
+              <span class="text-h6 text-uppercase text-center"
+                >Composition</span
+              >
             </v-card-title>
             <v-card-text class="text-h5 font-weight-bold">
               <span class="text-h6 font-weight-light">Tank:</span>
@@ -26,7 +28,7 @@
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 font-weight-light">Stats</span>
+              <span class="text-h6 text-uppercase text-center">Stats</span>
             </v-card-title>
 
             <v-card-text class="text-h5 font-weight-bold">
@@ -40,7 +42,7 @@
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 font-weight-light">Links</span>
+              <span class="text-h6 text-uppercase text-center">Links</span>
             </v-card-title>
 
             <v-card-text class="text-h5 font-weight-bold">
@@ -73,7 +75,7 @@
         <v-col cols="12">
           <v-card v-if="guildProgress" color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 font-weight-light">
+              <span class="text-h6 text-uppercase text-center">
                 Progression - Dragonflight
               </span>
             </v-card-title>
@@ -119,7 +121,7 @@
         </v-col>
       </v-row>
       <v-row>
-        <div class="col">
+        <v-col class="text font-weight-light">
           <v-card dark>
             <v-card-title>
               <v-text-field
@@ -270,7 +272,7 @@
               </template>
             </v-data-table>
           </v-card>
-        </div>
+        </v-col>
       </v-row>
     </v-container>
   </section>
