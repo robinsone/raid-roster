@@ -19,12 +19,12 @@
               {{ carousel.heading.toUpperCase() }}
             </div>
             <v-row>
-              <v-col cols="12" sm="4">
+              <v-col cols="12" md="6">
                 <p class="text mb-5 font-weight-light">
                   {{ carousel.leftSubHeading }}
                 </p>
               </v-col>
-              <v-col cols="12" sm="4">
+              <v-col cols="12" md="6">
                 <p class="text mb-5 font-weight-light">
                   {{ carousel.rightSubHeading }}
                 </p>
