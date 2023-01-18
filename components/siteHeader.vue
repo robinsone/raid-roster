@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" fixed app temporary>
+    <!-- <v-navigation-drawer v-model="drawer" fixed app temporary>
       <v-list dense>
         <v-list-item-group v-for="(item, i) in items" :key="i" color="primary">
           <v-list-item v-if="!item.submenu" :to="item.to">
@@ -31,7 +31,7 @@
           </v-list-group>
         </v-list-item-group>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-app-bar fixed app hide-on-scroll height="64" elevate-on-scroll>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
       <nuxt-link to="/" class="d-flex" style="text-decoration: none">

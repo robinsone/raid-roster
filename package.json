@@ -14,7 +14,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.8.1",
-    "execa": "^6.1.0",
+    "file-system": "^2.2.2",
+    "fs": "^0.0.1-security",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {

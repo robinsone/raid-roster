@@ -2,8 +2,8 @@
 <template>
   <section id="intro" class="py-1">
     <v-container>
-      <v-row>
-        <v-col cols="4">
+      <v-row cols="12" sm="4">
+        <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
               <span class="text-h6 font-weight-light">Composition</span>
@@ -23,7 +23,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="4">
+        <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
               <span class="text-h6 font-weight-light">Stats</span>
@@ -37,33 +37,36 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
               <span class="text-h6 font-weight-light">Links</span>
             </v-card-title>
 
             <v-card-text class="text-h5 font-weight-bold">
-              <v-btn
-                depressed
-                href="https://github.com/robinsone/raid-roster/wiki"
-              >
-                Wiki
-              </v-btn>
-              <v-btn
-                class="ml-1"
-                depressed
-                href="https://github.com/robinsone/raid-roster/wiki/Loot-Rules"
-              >
-                Loot Rules
-              </v-btn>
-              <v-btn
-                class="ml-1"
-                depressed
-                href="https://github.com/robinsone/raid-roster/wiki/ERT-Notes"
-              >
-                ERT-Notes
-              </v-btn>
+              <v-row align="center" justify="space-around">
+                <v-btn
+                  depressed
+                  href="https://github.com/robinsone/raid-roster/wiki"
+                >
+                  Wiki
+                </v-btn>
+                <v-btn
+                  class="ml-1"
+                  depressed
+                  href="https://github.com/robinsone/raid-roster/wiki/Loot-Rules"
+                >
+                  Loot Rules
+                </v-btn>
+                <v-btn
+                  class="ml-1"
+                  depressed
+                  href="https://github.com/robinsone/raid-roster/wiki/ERT-Notes"
+                >
+                  ERT-Notes
+                </v-btn>
+              </v-row>
+              <br />
             </v-card-text>
           </v-card>
         </v-col>
@@ -307,8 +310,8 @@ export default {
       raiderioUrl: 'https://raider.io/api/v1/characters/profile?region=us',
       raiderioFields:
         'mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear%2Ctalents',
-      server: 'illidan',
-      raiders: rosterJSON,
+      server: rosterJSON.server,
+      raiders: rosterJSON.roster,
     }
   },
   computed: {
