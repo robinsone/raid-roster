@@ -5,7 +5,7 @@
   >
     <v-container>
       <v-row>
-        <v-col>
+        <v-col cols="12" sm="4">
           <v-card>
             <v-card-title>
               <p class="text-h6 text-uppercase text-center">Applicants</p>
@@ -21,7 +21,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col>
+        <v-col cols="12" sm="4">
           <v-card>
             <v-card-title>
               <p class="text-h6 text-uppercase text-center">Attendance</p>
@@ -36,7 +36,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col>
+        <v-col cols="12" sm="4">
           <v-card>
             <v-card-title>
               <p class="text-h6 text-uppercase text-center">Raid Schedule</p>

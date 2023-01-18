@@ -258,12 +258,12 @@
                       </v-chip>
                     </template>
                     <template v-slot:[`item.mplusRating`]="{ item }">
-                      <v-chip color="primary" dark>
+                      <v-chip dark>
                         {{ item.mplusRating }}
                       </v-chip>
                     </template>
                     <template v-slot:[`item.mplus`]="{ item }">
-                      <v-chip color="primary" dark>
+                      <v-chip dark>
                         {{ '+' + item.mplus.toString() }}
                       </v-chip>
                     </template>
