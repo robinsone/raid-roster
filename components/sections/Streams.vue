@@ -17,7 +17,7 @@
             <v-row>
               <v-col class="d-flex child-flex" cols="4" xl="3">
                 <iframe
-                  src="https://player.twitch.tv/?channel=ENDERS03&parent=localhost"
+                  src="https://player.twitch.tv/?channel=ENDERS03&parent=robinsone.github.io"
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
@@ -28,7 +28,7 @@
               </v-col>
               <v-col class="d-flex child-flex" cols="4" xl="3">
                 <iframe
-                  src="https://player.twitch.tv/?channel=Xaide_1&parent=localhost"
+                  src="https://player.twitch.tv/?channel=Xaide_1&parent=robinsone.github.io"
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
@@ -39,7 +39,7 @@
               </v-col>
               <v-col class="d-flex child-flex" cols="4" xl="3">
                 <iframe
-                  src="https://player.twitch.tv/?channel=ogblazs&parent=localhost"
+                  src="https://player.twitch.tv/?channel=ogblazs&parent=robinsone.github.io"
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
