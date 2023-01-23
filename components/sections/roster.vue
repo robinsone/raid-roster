@@ -5,7 +5,7 @@
       <v-row class="text-center">
         <v-col>
           <h2 class="text-h4 text-sm-h3 text-capitalize font-weight-black mb-4">
-            ROSTER
+            RAID TEAM
           </h2>
         </v-col>
       </v-row>

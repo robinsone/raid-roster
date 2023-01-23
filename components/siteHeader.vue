@@ -1,37 +1,5 @@
 <template>
   <div>
-    <!-- <v-navigation-drawer v-model="drawer" fixed app temporary>
-      <v-list dense>
-        <v-list-item-group v-for="(item, i) in items" :key="i" color="primary">
-          <v-list-item v-if="!item.submenu" :to="item.to">
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title v-text="item.title.toUpperCase()" />
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-group v-else :prepend-icon="item.icon" no-action>
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title
-                  v-text="item.title.toUpperCase()"
-                ></v-list-item-title>
-              </v-list-item-content>
-            </template>
-            <v-list-item
-              v-for="child in item.submenu"
-              :key="child.title"
-              :to="child.to"
-            >
-              <v-list-item-content>
-                <v-list-item-title v-text="child.title"></v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-group>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer> -->
     <v-app-bar fixed app hide-on-scroll height="64" elevate-on-scroll>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
       <nuxt-link to="/" class="d-flex" style="text-decoration: none">
@@ -83,6 +51,40 @@
           >{{ name.title }}</v-btn
         > </template
       ><v-spacer />
+      <v-btn
+        style="margin-right: 10px"
+        fab
+        dark
+        x-small
+        :href="'https://www.warcraftlogs.com/guild/us/illidan/The%20Church'"
+        target="_blank"
+        ><img
+          src="https://assets.rpglogs.com/img/warcraft/favicon.png?v=2"
+          height="30px"
+      /></v-btn>
+      <v-btn
+        style="margin-right: 10px"
+        fab
+        dark
+        x-small
+        :href="'https://worldofwarcraft.com/en-us/guild/us/illidan/the-church'"
+        target="_blank"
+        ><img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/WoW_icon.svg/1200px-WoW_icon.svg.png"
+          height="30px"
+      /></v-btn>
+      <v-btn
+        style="margin-right: 10px"
+        fab
+        dark
+        x-small
+        :href="'https://raider.io/guilds/us/illidan/The%20Church'"
+        target="_blank"
+      >
+        <img
+          src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
+          height="30px"
+      /></v-btn>
       <v-btn icon href="https://github.com/robinsone/raid-roster">
         <v-icon>mdi-github</v-icon>
       </v-btn>
@@ -102,73 +104,6 @@ export default {
       clipped: false,
       drawer: false,
       items: [],
-      // items: [
-      //   {
-      //     icon: 'mdi-folder-home-outline',
-      //     title: 'Home',
-      //     to: '/',
-      //   },
-      //   {
-      //     icon: 'mdi-account',
-      //     title: 'About',
-      //     to: '/about',
-      //   },
-      //   {
-      //     icon: 'mdi-tools',
-      //     title: 'Services',
-      //     to: '/services',
-      //     submenu: [
-      //       {
-      //         title: 'Services Page',
-      //         to: '/services',
-      //       },
-      //       {
-      //         title: 'Static Websites',
-      //         to: '/#',
-      //       },
-      //       {
-      //         title: 'Mobile Applications',
-      //         to: '/#',
-      //       },
-      //       {
-      //         title: 'Corporate websites',
-      //         to: '/#',
-      //       },
-      //       {
-      //         title: 'Editorial Sites',
-      //         to: '/#',
-      //       },
-      //       {
-      //         title: 'Ecommerce and Store',
-      //         to: '/#',
-      //       },
-      //       {
-      //         title: 'Block Chain Devemopment',
-      //         to: '/#',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     icon: 'mdi-cash-usd',
-      //     title: 'Pricing',
-      //     to: '/pricing',
-      //   },
-      //   {
-      //     icon: 'mdi-folder-image',
-      //     title: 'Gallery',
-      //     to: '/gallery',
-      //   },
-      //   {
-      //     icon: 'mdi-blogger',
-      //     title: 'Blog',
-      //     to: '/blog',
-      //   },
-      //   {
-      //     icon: 'mdi-contacts',
-      //     title: 'Contact',
-      //     to: '/contact',
-      //   },
-      // ],
     }
   },
   methods: {

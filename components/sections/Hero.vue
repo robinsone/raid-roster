@@ -14,7 +14,7 @@
         class="gradient-fill"
       >
         <v-container fill-height>
-          <div style="max-width: 800px">
+          <div>
             <div class="text-md-h2 mb-3 text-sm-h3 text-h5 font-weight-black">
               {{ carousel.heading.toUpperCase() }}
             </div>
