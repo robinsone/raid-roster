@@ -2,6 +2,13 @@
 <template>
   <section id="intro" class="py-16">
     <v-container>
+      <v-row class="text-center">
+        <v-col>
+          <h2 class="text-h4 text-sm-h3 text-capitalize font-weight-black mb-4">
+            ROSTER
+          </h2>
+        </v-col>
+      </v-row>
       <v-row cols="12" sm="4">
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
