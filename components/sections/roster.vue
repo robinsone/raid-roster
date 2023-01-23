@@ -190,7 +190,7 @@
                 </v-chip>
               </template>
               <template v-slot:[`item.mplusRating`]="{ item }">
-                <v-chip dark>
+                <v-chip :color="mplusColorRating(item.mplusRating)" dark>
                   {{ item.mplusRating }}
                 </v-chip>
               </template>
@@ -258,7 +258,7 @@
                       </v-chip>
                     </template>
                     <template v-slot:[`item.mplusRating`]="{ item }">
-                      <v-chip dark>
+                      <v-chip :color="mplusColorRating(item.mplusRating)" dark>
                         {{ item.mplusRating }}
                       </v-chip>
                     </template>
@@ -420,6 +420,26 @@ export default {
       else if (ilvl >= 359) return '#33aa33'
       else if (ilvl >= 346) return '#9d9d9d'
       else return '#9d9d9d'
+    },
+    mplusColorRating(raiting) {
+      if (raiting >= 2400) return '#ff8000'
+      else if (raiting >= 2320) return '#f36d57'
+      else if (raiting >= 2200) return '#ec6371'
+      else if (raiting >= 2060) return '#e3598b'
+      else if (raiting >= 1940) return '#d84fa3'
+      else if (raiting >= 1820) return '#ca46bc'
+      else if (raiting >= 1700) return '#b93dd5'
+      else if (raiting >= 1540) return '#a335ee'
+      else if (raiting >= 1420) return '#8c4bea'
+      else if (raiting >= 1300) return '#715be5'
+      else if (raiting >= 1180) return '#4f67e1'
+      else if (raiting >= 1060) return '#0070dd'
+      else if (raiting >= 1540) return '#3e81cb'
+      else if (raiting >= 1420) return '#5292b9'
+      else if (raiting >= 1300) return '#5ca4a6'
+      else if (raiting >= 1180) return '#5fb692'
+      else if (raiting >= 1060) return '#5ec87d'
+      else return '#ffffff'
     },
     getSortParam(sortOrder) {
       return sortOrder
