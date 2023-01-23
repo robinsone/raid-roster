@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-template-shadow -->
 <template>
-  <section id="intro" class="py-16">
+  <section id="RaidTeam" class="py-16">
     <v-container>
       <v-row class="text-center">
         <v-col>
@@ -13,12 +13,14 @@
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 text-uppercase text-center"
-                >Composition</span
+              <h6
+                class="text-center text-h5 text-sm-h5 text-capitalize font-weight-black"
               >
+                Composition
+              </h6>
             </v-card-title>
-            <v-card-text class="text-h5 font-weight-bold">
-              <span class="text-h6 font-weight-light">Tank:</span>
+            <v-card-text class="text text-h5 font-weight-bold">
+              <span class="text text-h6 font-weight-light">Tank:</span>
               {{ tankCount }}
               <span class="text-h6 font-weight-light">Healers:</span>
               {{ healerCount }}
@@ -35,7 +37,11 @@
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 text-uppercase text-center">Stats</span>
+              <h6
+                class="text-center text-h5 text-sm-h5 text-capitalize font-weight-black"
+              >
+                Stats
+              </h6>
             </v-card-title>
 
             <v-card-text class="text-h5 font-weight-bold">
@@ -49,7 +55,11 @@
         <v-col cols="12" sm="4">
           <v-card color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 text-uppercase text-center">Links</span>
+              <h6
+                class="text-center text-h5 text-sm-h5 text-capitalize font-weight-black"
+              >
+                Links
+              </h6>
             </v-card-title>
 
             <v-card-text class="text-h5 font-weight-bold">
@@ -82,9 +92,11 @@
         <v-col cols="12">
           <v-card v-if="guildProgress" color="#555555" dark>
             <v-card-title>
-              <span class="text-h6 text-uppercase text-center">
+              <h6
+                class="text-center text-h5 text-sm-h5 text-capitalize font-weight-black"
+              >
                 Progression - Dragonflight
-              </span>
+              </h6>
             </v-card-title>
 
             <v-card-text class="text-h6 font-weight-bold">

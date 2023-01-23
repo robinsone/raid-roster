@@ -3,9 +3,9 @@
     :class="$vuetify.theme.dark ? 'grey darken-1' : 'grey darken-1'"
     class="py-16"
   >
-    <v-container>
+    <v-container id="Apply">
       <v-row>
-        <v-col cols="12" sm="4">
+        <v-col cols="12" md="3">
           <v-card>
             <v-card-title>
               <p class="text-h6 text-uppercase text-center">Applicants</p>
@@ -21,7 +21,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="12" sm="4">
+        <v-col cols="12" md="3">
           <v-card>
             <v-card-title>
               <p class="text-h6 text-uppercase text-center">Attendance</p>
@@ -36,7 +36,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="12" sm="4">
+        <v-col cols="12" md="3">
           <v-card>
             <v-card-title>
               <p class="text-h6 text-uppercase text-center">Raid Schedule</p>
@@ -47,6 +47,23 @@
                 <li>8:30-11:30pm CST / 9:30-12:30pm EST</li>
                 <li>10 minute break</li>
               </ul>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="3">
+          <v-card color="red darken-2">
+            <v-card-title>
+              <p class="text-h6 text-uppercase">Apply!</p>
+            </v-card-title>
+            <v-card-text class="text text-center">
+              <v-btn
+                class="v-btn v-btn--is-elevated v-btn--has-bg v-btn--rounded black--text v-size--x-large primary dark"
+                href="https://docs.google.com/forms/d/1cf5m87_k2tjNy4HTYKjF-jFOQvPfaYiaZz7kBHe_YfU/edit?usp=sharing"
+                target="_blank"
+              >
+                Guild Application
+              </v-btn>
+              <p class="text my-2">Please apply online</p>
             </v-card-text>
           </v-card>
         </v-col>

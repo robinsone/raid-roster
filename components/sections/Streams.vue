@@ -1,5 +1,6 @@
 <template>
   <section
+    id="Streams"
     style="background-color: #6441a5"
     class="primary--text py-16 primary--text"
   >

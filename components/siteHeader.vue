@@ -1,9 +1,41 @@
 <template>
   <div>
+    <v-navigation-drawer v-model="drawer" fixed app temporary>
+      <v-list dense>
+        <v-list-item-group v-for="(item, i) in items" :key="i" color="primary">
+          <v-list-item v-if="!item.submenu" :to="item.to">
+            <v-list-item-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title.toUpperCase()" />
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-group v-else :prepend-icon="item.icon" no-action>
+            <template v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title
+                  v-text="item.title.toUpperCase()"
+                ></v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item
+              v-for="child in item.submenu"
+              :key="child.title"
+              :to="child.to"
+            >
+              <v-list-item-content>
+                <v-list-item-title v-text="child.title"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-group>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
     <v-app-bar fixed app hide-on-scroll height="64" elevate-on-scroll>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
       <nuxt-link to="/" class="d-flex" style="text-decoration: none">
-        <h2>The Church - WoW Raiding Guild</h2>
+        <img src="~/static/images/church_logo.png" height="50px" />
       </nuxt-link>
       <v-spacer />
       <template></template>
@@ -103,7 +135,33 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      items: [],
+      items: [
+        {
+          icon: 'mdi-folder-home-outline',
+          title: 'Raid Structure',
+          to: '#GuildRaidStructure',
+        },
+        {
+          icon: 'mdi-folder-home-outline',
+          title: 'Apply',
+          to: '#Apply',
+        },
+        {
+          icon: 'mdi-folder-home-outline',
+          title: 'Leadership',
+          to: '#Team',
+        },
+        {
+          icon: 'mdi-folder-home-outline',
+          title: 'Streams',
+          to: '#Streams',
+        },
+        {
+          icon: 'mdi-folder-home-outline',
+          title: 'Raid Team',
+          to: '#RaidTeam',
+        },
+      ],
     }
   },
   methods: {

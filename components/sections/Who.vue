@@ -6,6 +6,7 @@
           <v-row class="py-16">
             <v-col cols="12">
               <h2
+                id="GuildRaidStructure"
                 class="text-h4 text-md-h3 text-center font-weight-black text-capitalize"
               >
                 GUILD RAID STRUCTURE
@@ -23,23 +24,23 @@
                 Ranks:
               </h6>
               <p class="text font-weight-light">
-                <b class="text-uppercase">Templar</b> – Raiders that officers
-                believe go above and beyond our expectations for the good of the
-                raid and the guild. Officers regularly discuss raider candidacy
-                for the Templar rank; don’t ask us if you qualify, we’ll tell
-                you when we promote you!
+                <b class="text-uppercase cyan--text">Templar</b> - Raiders that
+                officers believe go above and beyond our expectations for the
+                good of the raid and the guild. Officers regularly discuss
+                raider candidacy for the Templar rank; don't ask us if you
+                qualify, we'll tell you when we promote you!
               </p>
               <p class="text font-weight-light">
-                <b class="text-uppercase">Crusaders</b> – Raiders who have
-                passed their trial period and maintain attendance and
+                <b class="text-uppercase cyan--text">Crusaders</b> - Raiders who
+                have passed their trial period and maintain attendance and
                 performance requirements.
               </p>
               <p class="text font-weight-light">
-                <b class="text-uppercase">Acolytes</b> – These are raiders that
-                fall into two categories watched by the officers. Members
-                currently starting their trial period, or raiders who have
-                fallen below the attendance and/or performance requirements of a
-                crusader.
+                <b class="text-uppercase cyan--text">Acolytes</b> - These are
+                raiders that fall into two categories watched by the officers.
+                Members currently starting their trial period, or raiders who
+                have fallen below the attendance and/or performance requirements
+                of a crusader.
               </p>
               <p class="text font-weight-light">
                 Holding a higher rank doesn't mean you won't be sat; if an
