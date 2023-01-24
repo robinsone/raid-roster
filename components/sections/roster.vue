@@ -458,7 +458,7 @@ export default {
       else if (raiting >= 1300) return '#5ca4a6'
       else if (raiting >= 1180) return '#5fb692'
       else if (raiting >= 1060) return '#5ec87d'
-      else return '#ffffff'
+      else return '#5ec87d'
     },
     getSortParam(sortOrder) {
       return sortOrder
