@@ -84,9 +84,8 @@
                 Weekly M+ Vault:
               </h6>
               <p class="text font-weight-light">
-                Due to the high reward profile, raiders are to complete one M+
-                dungeon per week; key level will be determined on a case-by-case
-                basis.
+                Due to the high reward profile, raiders are to complete at least
+                one level 16 or higher M+ key each week.
               </p>
             </v-col>
             <v-col cols="12" md="4">
