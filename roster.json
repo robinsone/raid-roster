@@ -12,16 +12,6 @@
       ]
     },
     {
-      "name": "Twifferclap",
-      "role": "Tank",
-      "alt": [
-        {
-          "name": "Grandmaspoon",
-          "role": "Tank"
-        }
-      ]
-    },
-    {
       "name": "Quadraxes",
       "role": "Healer"
     },
