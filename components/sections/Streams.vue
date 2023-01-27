@@ -16,7 +16,7 @@
         <v-container>
           <v-row class="py-16">
             <v-row>
-              <v-col class="d-flex child-flex" cols="4" xl="3">
+              <v-col class="d-flex" cols="12" md="6">
                 <iframe
                   src="https://player.twitch.tv/?channel=ENDERS03&parent=robinsone.github.io"
                   frameborder="0"
@@ -27,18 +27,7 @@
                 >
                 </iframe>
               </v-col>
-              <v-col class="d-flex child-flex" cols="4" xl="3">
-                <iframe
-                  src="https://player.twitch.tv/?channel=Xaide_1&parent=robinsone.github.io"
-                  frameborder="0"
-                  allowfullscreen="true"
-                  scrolling="no"
-                  height="214"
-                  width="620"
-                >
-                </iframe>
-              </v-col>
-              <v-col class="d-flex child-flex" cols="4" xl="3">
+              <v-col class="d-flex" cols="12" md="6">
                 <iframe
                   src="https://player.twitch.tv/?channel=ogblazs&parent=robinsone.github.io"
                   frameborder="0"
