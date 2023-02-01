@@ -38,11 +38,11 @@
       "role": "Healer"
     },
     {
-      "name": "Devô",
+      "name": "Demonicdevo",
       "role": "Melee DPS",
       "alt": [
         {
-          "name": "Demonicdevo",
+          "name": "Devô",
           "role": "Melee DPS"
         }
       ]
@@ -53,6 +53,14 @@
     },
     {
       "name": "Zerosrog",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Hiddendan",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Crimeb",
       "role": "Melee DPS"
     },
     {
@@ -73,6 +81,10 @@
     },
     {
       "name": "Ogblazs",
+      "role": "Ranged DPS"
+    },
+    {
+      "name": "Squidb",
       "role": "Ranged DPS"
     },
     {
