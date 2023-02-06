@@ -53,7 +53,13 @@
     },
     {
       "name": "Zerosrog",
-      "role": "Melee DPS"
+      "role": "Melee DPS",
+      "alt": [
+        {
+          "name": "Zerosmnk",
+          "role": "Melee DPS"
+        }
+      ]
     },
     {
       "name": "Hiddendan",
