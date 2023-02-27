@@ -115,7 +115,13 @@
     },
     {
       "name": "Charlotteros",
-      "role": "Ranged DPS"
+      "role": "Ranged DPS",
+      "alt": [
+        {
+          "name": "Noblemagi",
+          "role": "Ranged DPS"
+        }
+      ]
     },
     {
       "name": "Brolusk",
