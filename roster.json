@@ -52,16 +52,6 @@
       "role": "Healer"
     },
     {
-      "name": "Zerosrog",
-      "role": "Melee DPS",
-      "alt": [
-        {
-          "name": "Zerosmnk",
-          "role": "Melee DPS"
-        }
-      ]
-    },
-    {
       "name": "Hiddendan",
       "role": "Melee DPS"
     },
@@ -91,10 +81,6 @@
     },
     {
       "name": "Squidb",
-      "role": "Ranged DPS"
-    },
-    {
-      "name": "Solargalaxy",
       "role": "Ranged DPS"
     },
     {
