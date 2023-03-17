@@ -1,0 +1,15 @@
+{
+  "server": "illidan",
+  "roster": [
+    {
+      "name": "Machîne",
+      "role": "Ranged DPS",
+      "alt": [
+        {
+          "name": "Machiñe",
+          "role": "Tank"
+        }
+      ]
+    }
+  ]
+}
