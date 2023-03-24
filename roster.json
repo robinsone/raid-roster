@@ -104,11 +104,11 @@
       "role": "Ranged DPS"
     },
     {
-      "name": "Charlotteros",
+      "name": "Noblemagi",
       "role": "Ranged DPS",
       "alt": [
         {
-          "name": "Noblemagi",
+          "name": "Charlotteros",
           "role": "Ranged DPS"
         }
       ]
@@ -116,16 +116,6 @@
     {
       "name": "Brolusk",
       "role": "Ranged DPS"
-    },
-    {
-      "name": "Machîne",
-      "role": "Ranged DPS",
-      "alt": [
-        {
-          "name": "Machiñe",
-          "role": "Tank"
-        }
-      ]
     },
     {
       "name": "Bambabamba",
@@ -136,6 +126,10 @@
           "role": "Melee DPS"
         }
       ]
+    },
+    {
+      "name": "Tedhitchcoc",
+      "role": "Melee DPS"
     }
   ]
 }
