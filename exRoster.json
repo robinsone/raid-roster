@@ -10,6 +10,14 @@
           "role": "Tank"
         }
       ]
+    },
+    {
+      "name": "Vodin",
+      "role": "Healer"
+    },
+    {
+      "name": "Lrodcairo",
+      "role": "Healer"
     }
   ]
 }
