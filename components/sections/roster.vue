@@ -143,18 +143,188 @@
         <v-col class="text font-weight-light">
           <v-card dark>
             <v-card-title>
-              <v-text-field
-                v-model="search"
-                append-icon="mdi-magnify"
-                label="Search"
-                single-line
-                hide-details
-              ></v-text-field>
+              <v-col><h2>Current Roster</h2></v-col>
+              <v-col>
+                <v-text-field
+                  v-model="Search"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+              </v-col>
             </v-card-title>
             <v-data-table
               :headers="headers"
               :items="data"
               :search="search"
+              disable-pagination
+              hide-default-footer
+              multi-sort
+              :sort-by.sync="sortBy"
+              :sort-desc.sync="sortDesc"
+              dark
+              item-key="name"
+              show-expand
+            >
+              <template v-slot:[`item.name`]="{ item }">
+                <b class="text-uppercase">{{ item.name }}</b>
+              </template>
+              <template v-slot:[`item.armory`]="{ item }">
+                <v-btn
+                  fab
+                  dark
+                  x-small
+                  :href="
+                    'https://worldofwarcraft.com/en-us/character/us/' +
+                    item.armory.toLowerCase()
+                  "
+                  target="_blank"
+                  ><img src="https://i.imgur.com/WQylPcH.png" height="30px"
+                /></v-btn>
+                <v-btn
+                  fab
+                  dark
+                  x-small
+                  :href="
+                    'https://raider.io/characters/us/' + item.rio.toLowerCase()
+                  "
+                  target="_blank"
+                  ><img
+                    src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
+                    height="30px"
+                /></v-btn>
+                <v-btn
+                  fab
+                  dark
+                  x-small
+                  class="pa-0 ma-0"
+                  height="30px"
+                  width="30px"
+                  :href="talentUrl + item.talentLoadout"
+                  target="_blank"
+                  >T
+                </v-btn>
+              </template>
+              <template v-slot:[`item.ilvl`]="{ item }">
+                <v-chip :color="getColor(item.ilvl)" dark>
+                  {{ item.ilvl }}
+                </v-chip>
+              </template>
+              <template v-slot:[`item.mplusRating`]="{ item }">
+                <v-chip :color="mplusColorRating(item.mplusRating)" dark>
+                  {{ item.mplusRating }}
+                </v-chip>
+              </template>
+              <template v-slot:[`item.mplus`]="{ item }">
+                <v-chip dark>
+                  {{ '+' + item.mplus.toString() }}
+                </v-chip>
+              </template>
+              <template v-slot:expanded-item="{ headers, item }">
+                <td :colspan="headers.length">
+                  <v-data-table
+                    :headers="headers"
+                    hide-default-header
+                    :items="item.alt"
+                    disable-pagination
+                    hide-default-footer
+                    dark
+                    item-key="name"
+                  >
+                    <template v-slot:[`item.name`]="{ item }">
+                      <b class="text-uppercase">{{ item.name }}</b>
+                    </template>
+                    <template v-slot:[`item.armory`]="{ item }">
+                      <v-btn
+                        fab
+                        dark
+                        x-small
+                        :href="
+                          'https://worldofwarcraft.com/en-us/character/us/' +
+                          item.armory.toLowerCase()
+                        "
+                        target="_blank"
+                        ><img
+                          src="https://i.imgur.com/WQylPcH.png"
+                          height="30px"
+                      /></v-btn>
+                      <v-btn
+                        fab
+                        dark
+                        x-small
+                        :href="
+                          'https://raider.io/characters/us/' +
+                          item.rio.toLowerCase()
+                        "
+                        target="_blank"
+                        ><img
+                          src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
+                          height="30px"
+                      /></v-btn>
+                      <v-btn
+                        fab
+                        dark
+                        x-small
+                        class="pa-0 ma-0"
+                        height="30px"
+                        width="30px"
+                        :href="talentUrl + item.talentLoadout"
+                        target="_blank"
+                        >T
+                      </v-btn>
+                    </template>
+                    <template v-slot:[`item.ilvl`]="{ item }">
+                      <v-chip :color="getColor(item.ilvl)" dark>
+                        {{ item.ilvl }}
+                      </v-chip>
+                    </template>
+                    <template v-slot:[`item.mplusRating`]="{ item }">
+                      <v-chip :color="mplusColorRating(item.mplusRating)" dark>
+                        {{ item.mplusRating }}
+                      </v-chip>
+                    </template>
+                    <template v-slot:[`item.mplus`]="{ item }">
+                      <v-chip dark>
+                        {{ '+' + item.mplus.toString() }}
+                      </v-chip>
+                    </template>
+                  </v-data-table>
+                </td>
+              </template>
+            </v-data-table>
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-btn
+            v-if="!showPastRaiders"
+            color="secondary"
+            @click="showPastRaiders = true"
+            >View past raiders</v-btn
+          >
+        </v-col>
+      </v-row>
+      <v-row v-if="showPastRaiders">
+        <v-col class="text font-weight-light">
+          <v-card dark>
+            <v-card-title>
+              <v-col><h2>Past Roster</h2></v-col>
+              <v-col>
+                <v-text-field
+                  v-model="exSearch"
+                  append-icon="mdi-magnify"
+                  label="Search"
+                  single-line
+                  hide-details
+                ></v-text-field>
+              </v-col>
+            </v-card-title>
+            <v-data-table
+              :headers="headers"
+              :items="exData"
+              :search="exSearch"
               disable-pagination
               hide-default-footer
               multi-sort
@@ -299,6 +469,8 @@
 
 <script>
 import rosterJSON from '~/roster.json'
+import exRosterJSON from '~/exRoster.json'
+
 export default {
   data(vm) {
     return {
@@ -323,16 +495,20 @@ export default {
       sortBy: ['role', 'ilvl'],
       sortDesc: [true, true],
       data: [],
+      exData: [],
       expanded: null,
       guildProgress: null,
       stats: [],
       search: '',
+      exSearch: '',
       talentUrl: 'https://www.wowhead.com/talent-calc/blizzard/',
       raiderioUrl: 'https://raider.io/api/v1/characters/profile?region=us',
       raiderioFields:
         'mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear%2Ctalents',
       server: rosterJSON.server,
       raiders: rosterJSON.roster,
+      exRaiders: exRosterJSON.roster,
+      showPastRaiders: false,
     }
   },
   computed: {
@@ -362,6 +538,7 @@ export default {
   mounted() {
     this.getGuildProgress()
     this.getData()
+    this.getExData()
   },
 
   methods: {
@@ -403,6 +580,67 @@ export default {
         )
 
         this.data.push({
+          name: raider.name,
+          ilvl: result.gear.item_level_equipped,
+          mplus:
+            result.mythic_plus_weekly_highest_level_runs.length > 0
+              ? result.mythic_plus_weekly_highest_level_runs.reduce(
+                  (prev, current) => {
+                    return prev.mythic_level > current.mythic_level
+                      ? prev
+                      : current
+                  }
+                ).mythic_level
+              : 0,
+          role: raider.role,
+          mplusRating: result.mythic_plus_scores_by_season[0].scores.all,
+          class: result.class,
+          spec: result.active_spec_name,
+          armory: this.server + '/' + encodeURIComponent(raider.name),
+          rio: this.server + '/' + encodeURIComponent(raider.name),
+          talentLoadout: result.talentLoadout.loadout_text,
+          alt: alts,
+        })
+      })
+    },
+    getExData() {
+      this.exRaiders.forEach(async (raider) => {
+        const alts = []
+        if (raider.alt) {
+          raider.alt.forEach(async (alt) => {
+            const result = await this.$axios.$get(
+              `${this.raiderioUrl}&realm=${this.server}&name=${alt.name}&fields=${this.raiderioFields}`
+            )
+
+            alts.push({
+              name: alt.name,
+              ilvl: result.gear.item_level_equipped,
+              mplus:
+                result.mythic_plus_weekly_highest_level_runs.length > 0
+                  ? result.mythic_plus_weekly_highest_level_runs.reduce(
+                      (prev, current) => {
+                        return prev.mythic_level > current.mythic_level
+                          ? prev
+                          : current
+                      }
+                    ).mythic_level
+                  : 0,
+              role: alt.role,
+              mplusRating: result.mythic_plus_scores_by_season[0].scores.all,
+              class: result.class,
+              spec: result.active_spec_name,
+              armory: this.server + '/' + encodeURIComponent(alt.name),
+              rio: this.server + '/' + encodeURIComponent(alt.name),
+              talentLoadout: result.talentLoadout.loadout_text,
+            })
+          })
+        }
+
+        const result = await this.$axios.$get(
+          `${this.raiderioUrl}&realm=${this.server}&name=${raider.name}&fields=${this.raiderioFields}`
+        )
+
+        this.exData.push({
           name: raider.name,
           ilvl: result.gear.item_level_equipped,
           mplus:

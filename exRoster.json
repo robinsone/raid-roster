@@ -18,6 +18,10 @@
     {
       "name": "Lrodcairo",
       "role": "Healer"
+    },
+    {
+      "name": "Diestofire",
+      "role": "Ranged DPS"
     }
   ]
 }
