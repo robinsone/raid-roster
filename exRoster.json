@@ -12,16 +12,16 @@
       ]
     },
     {
-      "name": "Vodin",
-      "role": "Healer"
-    },
-    {
       "name": "Lrodcairo",
       "role": "Healer"
     },
     {
       "name": "Diestofire",
       "role": "Ranged DPS"
+    },
+    {
+      "name": "Youmus",
+      "role": "Melee DPS"
     }
   ]
 }

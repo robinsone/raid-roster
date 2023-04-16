@@ -52,10 +52,6 @@
       "role": "Melee DPS"
     },
     {
-      "name": "Youmus",
-      "role": "Melee DPS"
-    },
-    {
       "name": "Fischa",
       "role": "Melee DPS"
     },
@@ -122,6 +118,10 @@
     {
       "name": "Discoinferno",
       "role": "Ranged DPS"
+    },
+    {
+      "name": "Vodin",
+      "role": "Healer"
     }
   ]
 }
