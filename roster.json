@@ -44,8 +44,14 @@
       "role": "Healer"
     },
     {
-      "name": "Hiddendan",
-      "role": "Melee DPS"
+      "name": "Voidan",
+      "role": "Ranged DPS",
+      "alt": [
+        {
+          "name": "Hiddendan",
+          "role": "Melee DPS"
+        }
+      ]
     },
     {
       "name": "Crimeb",
@@ -99,14 +105,24 @@
     },
     {
       "name": "Brolusk",
-      "role": "Ranged DPS"
+      "role": "Ranged DPS",
+      "alt": [
+        {
+          "name": "Saladiss",
+          "role": "Ranged DPS"
+        }
+      ]
     },
     {
-      "name": "Bambabamba",
+      "name": "Dentsuya",
       "role": "Melee DPS",
       "alt": [
         {
           "name": "Argentzelda",
+          "role": "Melee DPS"
+        },
+        {
+          "name": "Bambabamba",
           "role": "Melee DPS"
         }
       ]
