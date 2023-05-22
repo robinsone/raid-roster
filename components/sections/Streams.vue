@@ -22,8 +22,7 @@
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
-                  height="214"
-                  width="620"
+                  max-width="620"
                 >
                 </iframe>
               </v-col>
@@ -33,8 +32,7 @@
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
-                  height="214"
-                  width="620"
+                  max-width="620"
                 >
                 </iframe>
               </v-col>
@@ -44,8 +42,7 @@
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
-                  height="214"
-                  width="620"
+                  max-width="620"
                 >
                 </iframe>
               </v-col>

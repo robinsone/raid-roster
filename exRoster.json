@@ -2,6 +2,16 @@
   "server": "illidan",
   "roster": [
     {
+      "name": "Saladiss",
+      "role": "Ranged DPS",
+      "alt": [
+        {
+          "name": "Brolusk",
+          "role": "Ranged DPS"
+        }
+      ]
+    },
+    {
       "name": "Machîne",
       "role": "Ranged DPS",
       "alt": [
