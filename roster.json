@@ -45,13 +45,7 @@
     },
     {
       "name": "Voidan",
-      "role": "Ranged DPS",
-      "alt": [
-        {
-          "name": "Hiddendan",
-          "role": "Melee DPS"
-        }
-      ]
+      "role": "Ranged DPS"
     },
     {
       "name": "Crimeb",
@@ -78,7 +72,7 @@
       "role": "Ranged DPS"
     },
     {
-      "name": "Solargalaxy",
+      "name": "Solarhia",
       "role": "Ranged DPS"
     },
     {

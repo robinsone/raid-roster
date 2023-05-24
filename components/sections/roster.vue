@@ -306,7 +306,7 @@
           >
         </v-col>
       </v-row>
-      <v-row v-if="showPastRaiders">
+      <!-- <v-row v-if="showPastRaiders">
         <v-col class="text font-weight-light">
           <v-card dark>
             <v-card-title>
@@ -462,14 +462,14 @@
             </v-data-table>
           </v-card>
         </v-col>
-      </v-row>
+      </v-row> -->
     </v-container>
   </section>
 </template>
 
 <script>
 import rosterJSON from '~/roster.json'
-import exRosterJSON from '~/exRoster.json'
+// import exRosterJSON from '~/exRoster.json'
 
 export default {
   data(vm) {
@@ -507,7 +507,7 @@ export default {
         'mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_weekly_highest_level_runs%2Cgear%2Ctalents',
       server: rosterJSON.server,
       raiders: rosterJSON.roster,
-      exRaiders: exRosterJSON.roster,
+      // exRaiders: exRosterJSON.roster,
       showPastRaiders: false,
     }
   },
@@ -538,7 +538,7 @@ export default {
   mounted() {
     this.getGuildProgress()
     this.getData()
-    this.getExData()
+    // this.getExData()
   },
 
   methods: {
