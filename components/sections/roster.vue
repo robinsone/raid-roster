@@ -89,52 +89,71 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="12">
-          <v-card v-if="guildProgress" color="#555555" dark>
-            <v-card-title>
-              <h6
-                class="text-center text-h5 text-sm-h5 text-capitalize font-weight-black"
-              >
-                Progression - Dragonflight
-              </h6>
-            </v-card-title>
-
-            <v-card-text class="text-h6 font-weight-bold">
-              <span class="text-h6 font-weight-light"
-                >Vault of the Incarnates:</span
-              >
-              <br />
-              <div class="ml-6">
-                <ul>
-                  <li>
-                    {{
-                      guildProgress['vault-of-the-incarnates']
-                        .mythic_bosses_killed
-                    }}/{{
-                      guildProgress['vault-of-the-incarnates'].total_bosses
-                    }}
-                    Mythic
-                  </li>
-                  <li>
-                    {{
-                      guildProgress['vault-of-the-incarnates']
-                        .heroic_bosses_killed
-                    }}/{{
-                      guildProgress['vault-of-the-incarnates'].total_bosses
-                    }}
-                    Heroic
-                  </li>
-                  <li>
-                    {{
-                      guildProgress['vault-of-the-incarnates']
-                        .normal_bosses_killed
-                    }}/{{
-                      guildProgress['vault-of-the-incarnates'].total_bosses
-                    }}
-                    Normal
-                  </li>
-                </ul>
-              </div>
+      </v-row>
+      <v-row v-if="guildProgress">
+        <v-col cols="6">
+          <v-card outlined class="pa-2">
+            <v-card-title> Vault of the Incarnates </v-card-title>
+            <v-card-text class="text-h6 font-weight-light">
+              <ul>
+                <li>
+                  {{
+                    guildProgress['vault-of-the-incarnates']
+                      .mythic_bosses_killed
+                  }}/{{ guildProgress['vault-of-the-incarnates'].total_bosses }}
+                  Mythic
+                </li>
+                <li>
+                  {{
+                    guildProgress['vault-of-the-incarnates']
+                      .heroic_bosses_killed
+                  }}/{{ guildProgress['vault-of-the-incarnates'].total_bosses }}
+                  Heroic
+                </li>
+                <li>
+                  {{
+                    guildProgress['vault-of-the-incarnates']
+                      .normal_bosses_killed
+                  }}/{{ guildProgress['vault-of-the-incarnates'].total_bosses }}
+                  Normal
+                </li>
+              </ul>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="6">
+          <v-card outlined class="pa-2">
+            <v-card-title> Aberrus, The Shadowed Crucible </v-card-title>
+            <v-card-text class="text-h6 font-weight-light">
+              <ul>
+                <li>
+                  {{
+                    guildProgress['aberrus-the-shadowed-crucible']
+                      .mythic_bosses_killed
+                  }}/{{
+                    guildProgress['aberrus-the-shadowed-crucible'].total_bosses
+                  }}
+                  Mythic
+                </li>
+                <li>
+                  {{
+                    guildProgress['aberrus-the-shadowed-crucible']
+                      .heroic_bosses_killed
+                  }}/{{
+                    guildProgress['aberrus-the-shadowed-crucible'].total_bosses
+                  }}
+                  Heroic
+                </li>
+                <li>
+                  {{
+                    guildProgress['aberrus-the-shadowed-crucible']
+                      .normal_bosses_killed
+                  }}/{{
+                    guildProgress['aberrus-the-shadowed-crucible'].total_bosses
+                  }}
+                  Normal
+                </li>
+              </ul>
             </v-card-text>
           </v-card>
         </v-col>
@@ -296,7 +315,7 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row>
+      <!-- <v-row>
         <v-col>
           <v-btn
             v-if="!showPastRaiders"
@@ -305,7 +324,7 @@
             >View past raiders</v-btn
           >
         </v-col>
-      </v-row>
+      </v-row> -->
       <!-- <v-row v-if="showPastRaiders">
         <v-col class="text font-weight-light">
           <v-card dark>
