@@ -66,6 +66,7 @@
               <v-row align="center" justify="space-around">
                 <v-btn
                   depressed
+                  target="_blank"
                   href="https://github.com/robinsone/raid-roster/wiki"
                 >
                   Wiki
@@ -73,6 +74,7 @@
                 <v-btn
                   class="ml-1"
                   depressed
+                  target="_blank"
                   href="https://github.com/robinsone/raid-roster/wiki/Loot-Rules"
                 >
                   Loot Rules
@@ -80,9 +82,10 @@
                 <v-btn
                   class="ml-1"
                   depressed
-                  href="https://github.com/robinsone/raid-roster/wiki/ERT-Notes"
+                  target="_blank"
+                  href="https://robinsone.github.io/Cooldowns/"
                 >
-                  ERT-Notes
+                  Cooldown Management
                 </v-btn>
               </v-row>
               <br />
