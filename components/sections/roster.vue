@@ -19,22 +19,30 @@
                 Composition
               </h6>
             </v-card-title>
-            <v-card-text class="text text-h5 font-weight-bold">
-              <span class="text text-h6 font-weight-light">Tank:</span>
+            <v-card-text class="text text-h5 font-weight-bold orange--text">
+              <span class="text text-h6 font-weight-light white--text"
+                >Tank:</span
+              >
               {{ tankCount }}
-              <span class="text-h6 font-weight-light">Healers:</span>
+              <span class="text-h6 font-weight-light white--text"
+                >Healers:</span
+              >
               {{ healerCount }}
-              <span class="text-h6 font-weight-light">DPS:</span>
+              <span class="text-h6 font-weight-light white--text">DPS:</span>
               {{ rangedCount + meleeCount }}<br />
-              <span class="text-h6 font-weight-light">Melee DPS:</span>
+              <span class="text-h6 font-weight-light white--text"
+                >Melee DPS:</span
+              >
               {{ meleeCount }}
-              <span class="text-h6 font-weight-light">Ranged DPS:</span>
+              <span class="text-h6 font-weight-light white--text"
+                >Ranged DPS:</span
+              >
               {{ rangedCount }}
             </v-card-text>
           </v-card>
         </v-col>
 
-        <v-col cols="12" sm="4">
+        <v-col cols="12" sm="3">
           <v-card color="#555555" dark>
             <v-card-title>
               <h6
@@ -44,15 +52,19 @@
               </h6>
             </v-card-title>
 
-            <v-card-text class="text-h5 font-weight-bold">
-              <span class="text-h6 font-weight-light">Number of Raiders:</span>
+            <v-card-text class="text-h5 font-weight-bold cyan--text">
+              <span class="text-h6 font-weight-light white--text"
+                >Number of Raiders:</span
+              >
               {{ data.length }} <br />
-              <span class="text-h6 font-weight-light">Average ilvl:</span>
+              <span class="text-h6 font-weight-light white--text"
+                >Average ilvl:</span
+              >
               {{ averageIlvl }}<br />
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="12" sm="4">
+        <v-col cols="12" sm="5">
           <v-card color="#555555" dark>
             <v-card-title>
               <h6
@@ -62,9 +74,10 @@
               </h6>
             </v-card-title>
 
-            <v-card-text class="text-h5 font-weight-bold">
-              <v-row align="center" justify="space-around">
+            <v-card-text>
+              <v-flex>
                 <v-btn
+                  class="ma-2"
                   depressed
                   target="_blank"
                   href="https://github.com/robinsone/raid-roster/wiki"
@@ -72,7 +85,7 @@
                   Wiki
                 </v-btn>
                 <v-btn
-                  class="ml-1"
+                  class="ma-2"
                   depressed
                   target="_blank"
                   href="https://github.com/robinsone/raid-roster/wiki/Loot-Rules"
@@ -80,15 +93,14 @@
                   Loot Rules
                 </v-btn>
                 <v-btn
-                  class="ml-1"
+                  class="ma-2"
                   depressed
                   target="_blank"
                   href="https://robinsone.github.io/Cooldowns/"
                 >
-                  Cooldown Management
+                  CD Usage
                 </v-btn>
-              </v-row>
-              <br />
+              </v-flex>
             </v-card-text>
           </v-card>
         </v-col>
