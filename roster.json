@@ -120,6 +120,14 @@
       "role": "Melee DPS"
     },
     {
+      "name": "Xenolie",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Atermiss",
+      "role": "Ranged DPS"
+    },
+    {
       "name": "Vodin",
       "role": "Healer"
     }
