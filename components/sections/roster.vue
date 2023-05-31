@@ -180,7 +180,7 @@
               <v-col><h2>Current Roster</h2></v-col>
               <v-col>
                 <v-text-field
-                  v-model="Search"
+                  v-model="search"
                   append-icon="mdi-magnify"
                   label="Search"
                   single-line

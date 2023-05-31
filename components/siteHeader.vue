@@ -8,15 +8,17 @@
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title v-text="item.title.toUpperCase()" />
+              <v-list-item-title>{{
+                item.title.toUpperCase()
+              }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <v-list-group v-else :prepend-icon="item.icon" no-action>
             <template v-slot:activator>
               <v-list-item-content>
-                <v-list-item-title
-                  v-text="item.title.toUpperCase()"
-                ></v-list-item-title>
+                <v-list-item-title>{{
+                  item.title.toUpperCase()
+                }}</v-list-item-title>
               </v-list-item-content>
             </template>
             <v-list-item
@@ -25,7 +27,7 @@
               :to="child.to"
             >
               <v-list-item-content>
-                <v-list-item-title v-text="child.title"></v-list-item-title>
+                <v-list-item-title>{{ child.title }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
@@ -81,10 +83,11 @@
           class="py-8 hidden-sm-and-down"
           :to="name.to"
           >{{ name.title }}</v-btn
-        > </template
-      ><v-spacer />
+        >
+      </template>
+      <v-spacer />
       <v-btn
-        style="margin-right: 10px"
+        style="margin-left: 10px"
         fab
         dark
         x-small
@@ -95,7 +98,7 @@
           height="30px"
       /></v-btn>
       <v-btn
-        style="margin-right: 10px"
+        style="margin-left: 10px"
         fab
         dark
         x-small
@@ -106,7 +109,7 @@
           height="30px"
       /></v-btn>
       <v-btn
-        style="margin-right: 10px"
+        style="margin-left: 10px"
         fab
         dark
         x-small
@@ -117,14 +120,21 @@
           src="https://cdnassets.raider.io/images/brand/Icon_FullColor.png"
           height="30px"
       /></v-btn>
-      <v-btn icon href="https://github.com/robinsone/raid-roster">
+      <v-btn icon large href="https://github.com/robinsone/raid-roster">
         <v-icon>mdi-github</v-icon>
       </v-btn>
-      <v-btn icon @click="changeThemeColor">
+      <!-- <v-btn icon @click="changeThemeColor">
         <v-icon>{{
           $vuetify.theme.dark ? 'mdi-white-balance-sunny' : 'mdi-weather-night'
         }}</v-icon>
-      </v-btn>
+      </v-btn> -->
+      <a href="https://www.buymeacoffee.com/ericzrobinI" target="_blank">
+        <img
+          src="images/buy-me-a-coffee.png"
+          height="40px"
+          style="margin-top: 5px"
+        />
+      </a>
     </v-app-bar>
   </div>
 </template>
