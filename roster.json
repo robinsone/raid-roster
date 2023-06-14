@@ -52,10 +52,6 @@
       "role": "Melee DPS"
     },
     {
-      "name": "Fischa",
-      "role": "Melee DPS"
-    },
-    {
       "name": "Sigard",
       "role": "Tank"
     },
@@ -130,6 +126,18 @@
     {
       "name": "Vodin",
       "role": "Healer"
+    },
+    {
+      "name": "Vedrine",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Vedrine",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Foofsdk",
+      "role": "Melee DPS"
     }
   ]
 }
