@@ -22,7 +22,6 @@
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
-                  max-width="620"
                 >
                 </iframe>
               </v-col>
@@ -32,7 +31,6 @@
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
-                  max-width="620"
                 >
                 </iframe>
               </v-col>
@@ -42,7 +40,6 @@
                   frameborder="0"
                   allowfullscreen="true"
                   scrolling="no"
-                  max-width="620"
                 >
                 </iframe>
               </v-col>
@@ -53,6 +50,15 @@
     </v-row>
   </section>
 </template>
+
+<style scoped>
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+</style>
 
 <script>
 export default {
