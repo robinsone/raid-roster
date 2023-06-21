@@ -98,30 +98,12 @@
       ]
     },
     {
-      "name": "Dentsuya",
-      "role": "Melee DPS",
-      "alt": [
-        {
-          "name": "Argentzelda",
-          "role": "Melee DPS"
-        },
-        {
-          "name": "Bambabamba",
-          "role": "Melee DPS"
-        }
-      ]
-    },
-    {
       "name": "Tedhitchcoc",
       "role": "Melee DPS"
     },
     {
       "name": "Xenolie",
       "role": "Melee DPS"
-    },
-    {
-      "name": "Atermiss",
-      "role": "Ranged DPS"
     },
     {
       "name": "Vodin",
