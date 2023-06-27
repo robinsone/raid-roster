@@ -40,10 +40,6 @@
       ]
     },
     {
-      "name": "Aambulance",
-      "role": "Healer"
-    },
-    {
       "name": "Voidan",
       "role": "Ranged DPS"
     },
@@ -68,19 +64,11 @@
       "role": "Ranged DPS"
     },
     {
-      "name": "Solarhia",
-      "role": "Ranged DPS"
-    },
-    {
       "name": "Chopuff",
       "role": "Ranged DPS"
     },
     {
       "name": "Dotzíla",
-      "role": "Ranged DPS"
-    },
-    {
-      "name": "Catterpie",
       "role": "Ranged DPS"
     },
     {
@@ -108,10 +96,6 @@
     {
       "name": "Vodin",
       "role": "Healer"
-    },
-    {
-      "name": "Vedrine",
-      "role": "Melee DPS"
     }
   ]
 }
