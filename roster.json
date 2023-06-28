@@ -96,6 +96,10 @@
     {
       "name": "Vodin",
       "role": "Healer"
+    },
+    {
+      "name": "Brolymg",
+      "role": "Ranged DPS"
     }
   ]
 }
