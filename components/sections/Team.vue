@@ -66,6 +66,20 @@
                 alt=""
             /></v-avatar>
             <div class="text-h5 text-uppercase font-weight-black mt-6 mb-2">
+              Xaide
+            </div>
+            <div class="text--disabled text-uppercase">Melee Lead</div>
+          </v-sheet>
+        </v-col>
+        <v-col>
+          <v-sheet class="py-12 px-6" outlined shaped>
+            <v-avatar size="140"
+              ><img
+                src="~/static/images/evoker.png"
+                lazy-src="~/static/images/evoker.png"
+                alt=""
+            /></v-avatar>
+            <div class="text-h5 text-uppercase font-weight-black mt-6 mb-2">
               Judge
             </div>
             <div class="text--disabled text-uppercase">Heal Lead</div>
