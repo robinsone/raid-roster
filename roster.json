@@ -52,10 +52,6 @@
       "role": "Melee DPS"
     },
     {
-      "name": "Sigard",
-      "role": "Tank"
-    },
-    {
       "name": "Mêgatron",
       "role": "Melee DPS"
     },
@@ -94,8 +90,8 @@
       "role": "Melee DPS"
     },
     {
-      "name": "Xenolie",
-      "role": "Melee DPS"
+      "name": "Feltheory",
+      "role": "Ranged DPS"
     },
     {
       "name": "Brolymg",
@@ -103,6 +99,10 @@
     },
     {
       "name": "Fortus",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Demonlg",
       "role": "Melee DPS"
     }
   ]
