@@ -76,29 +76,11 @@
       "role": "Healer"
     },
     {
-      "name": "Noblemagi",
-      "role": "Ranged DPS",
-      "alt": [
-        {
-          "name": "Charlotteros",
-          "role": "Ranged DPS"
-        }
-      ]
-    },
-    {
       "name": "Tedhitchcoc",
       "role": "Melee DPS"
     },
     {
-      "name": "Feltheory",
-      "role": "Ranged DPS"
-    },
-    {
       "name": "Brolymg",
-      "role": "Ranged DPS"
-    },
-    {
-      "name": "Tarzor",
       "role": "Ranged DPS"
     },
     {
@@ -111,10 +93,6 @@
     },
     {
       "name": "Fortus",
-      "role": "Melee DPS"
-    },
-    {
-      "name": "Demonlg",
       "role": "Melee DPS"
     }
   ]
