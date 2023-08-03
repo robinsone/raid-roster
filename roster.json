@@ -34,18 +34,28 @@
       ]
     },
     {
-      "name": "Demonicdevo",
-      "role": "Melee DPS",
+      "name": "ßearforceøne",
+      "role": "Ranged DPS",
       "alt": [
         {
           "name": "Devô",
+          "role": "Melee DPS"
+        },
+        {
+          "name": "Demonicdevo",
           "role": "Melee DPS"
         }
       ]
     },
     {
       "name": "Voidan",
-      "role": "Ranged DPS"
+      "role": "Ranged DPS",
+      "alt": [
+        {
+          "name":"Danragon",
+          "role": "Ranged DPS"
+        }
+      ]
     },
     {
       "name": "Crimeb",
@@ -94,6 +104,18 @@
     {
       "name": "Fortus",
       "role": "Melee DPS"
+    },
+    {
+      "name": "Loregeron",
+      "role": "Melee DPS"
+    },
+    {
+      "name": "Stormmyxia",
+      "role": "Healer"
+    },
+    {
+      "name": "Monsterfann",
+      "role": "Ranged DPS"
     }
   ]
 }
