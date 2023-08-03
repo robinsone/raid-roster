@@ -16,7 +16,7 @@
       "role": "Healer"
     },
     {
-      "name": "Judgedraco",
+      "name": "Judgêmêntal",
       "role": "Healer",
       "alt": [
         {
@@ -28,7 +28,7 @@
           "role": "Healer"
         },
         {
-          "name": "Judgêmêntal",
+          "name": "Judgedraco",
           "role": "Healer"
         }
       ]
@@ -87,7 +87,7 @@
     },
     {
       "name": "Tedhitchcoc",
-      "role": "Melee DPS"
+      "role": "Tank"
     },
     {
       "name": "Brolymg",
